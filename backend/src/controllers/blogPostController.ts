@@ -41,7 +41,18 @@ const createBlogPost = asyncHandler(async (req: Request, res: Response) => {
 //@access public
 const getBlogPostById = asyncHandler(async (req: Request, res: Response) => {
   const id = req.params.id;
-  res.status(200).json({ message: `Get blog with id: ${id}` });
+  if (!id) {
+    res.status(400);
+    throw new Error("An id must be given");
+  }
+  const blogPost = await BlogPost.findOne({
+    _id: id,
+  });
+  if (!blogPost) {
+    res.status(404);
+    throw new Error("The blog-post doesnt exist");
+  }
+  res.status(200).json({ blogPost: blogPost });
 });
 
 //@desc Update one blog post
