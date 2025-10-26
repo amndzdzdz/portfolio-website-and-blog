@@ -10,6 +10,10 @@ const blogPostSchema = mongoose.Schema(
       type: String,
       required: [true, "A caption is required!"],
     },
+    category: {
+      type: String,
+      required: [true, "A category is required!"],
+    },
     date: {
       type: Date,
       required: [true, "A date is required!"],
