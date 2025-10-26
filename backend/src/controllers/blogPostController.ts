@@ -57,10 +57,40 @@ const getBlogPostById = asyncHandler(async (req: Request, res: Response) => {
 
 //@desc Update one blog post
 //@route PUT /blogs/
-//@access public
+//@access private
 const updateBlogPost = asyncHandler(async (req: Request, res: Response) => {
-  console.log(req.body);
-  res.status(200).json({ message: "Updated one blog post" });
+  const { id, title, caption, category, date, timeToRead, image, content } =
+    req.body;
+  if (
+    !id ||
+    !title ||
+    !caption ||
+    !category ||
+    !date ||
+    !timeToRead ||
+    !image ||
+    !content
+  ) {
+    res.status(400);
+    throw new Error("All fields to createa  blog-post are required!");
+  }
+  const updatedBlogPost = await BlogPost.findOneAndUpdate(
+    { _id: id },
+    {
+      title: title,
+      caption: caption,
+      category: category,
+      date: date,
+      timeToRead: timeToRead,
+      image: image,
+      content: content,
+    }
+  );
+  if (!updatedBlogPost) {
+    res.status(404);
+    throw new Error("Couldn't find the blog-post");
+  }
+  res.status(200).json({ blogPost: updatedBlogPost });
 });
 
 //@desc Get all blog post
