@@ -4,7 +4,7 @@ const BlogPost = require("../models/blogPostModel");
 
 //@desc Create one blog post
 //@route POST /blogs/
-//@access public
+//@access private
 const createBlogPost = asyncHandler(async (req: Request, res: Response) => {
   const { title, caption, category, date, timeToRead, image, content } =
     req.body;
