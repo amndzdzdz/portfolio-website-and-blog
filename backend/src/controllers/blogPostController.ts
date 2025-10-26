@@ -108,6 +108,22 @@ const deleteBlogPost = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({ message: "Delete one blog post" });
 });
 
+//@desc Gets blog-post preview information
+//@route GET /blogs/
+//@access public
+const getBlogPostsPreview = asyncHandler(
+  async (req: Request, res: Response) => {
+    res.status(200).json({ message: "Get blogPost preview information" });
+  }
+);
+
+//@desc Get all titles and ids
+//@route GET /blogs/
+//@access public
+const getBlogPostTitles = asyncHandler(async (req: Request, res: Response) => {
+  res.status(200).json({ message: "Get blogPost titles" });
+});
+
 module.exports = {
   createBlogPost,
   getBlogPostById,
