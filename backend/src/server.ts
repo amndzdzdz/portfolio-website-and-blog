@@ -1,11 +1,14 @@
 import express = require("express");
 import dotenv = require("dotenv");
 import path = require("path");
+const connectDB = require("./config/connectDB");
 const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 const PORT = process.env.PORT;
+
+connectDB();
 
 app.use(express.json());
 app.use("/blogs/", require("./routes/blogPostRoutes"));
