@@ -93,19 +93,22 @@ const updateBlogPost = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({ blogPost: updatedBlogPost });
 });
 
-//@desc Get all blog post
-//@route GET /blogs/
-//@access public
-const getBlogPosts = asyncHandler(async (_req: Request, res: Response) => {
-  res.status(200).json({ message: "Get all blogs" });
-});
-
 //@desc Delete a blog post
 //@route DELETE /blogs/:id
 //@access public
 const deleteBlogPost = asyncHandler(async (req: Request, res: Response) => {
-  console.log(req.body);
-  res.status(200).json({ message: "Delete one blog post" });
+  const id = req.params.id;
+  if (!id) {
+    res.status(404);
+    throw new Error("The blog post doesn't exist");
+  }
+  await BlogPost.findOneAndDelete({ _id: id });
+  const blogPost = await BlogPost.findOne({ _id: id });
+  if (blogPost) {
+    res.status(400);
+    throw new Error("An error occured deleting the blogpost");
+  }
+  res.status(200).json({ message: "Successfully deleted blog-post!" });
 });
 
 //@desc Gets blog-post preview information
@@ -128,6 +131,5 @@ module.exports = {
   createBlogPost,
   getBlogPostById,
   updateBlogPost,
-  getBlogPosts,
   deleteBlogPost,
 };
