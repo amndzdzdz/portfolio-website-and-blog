@@ -4,7 +4,7 @@ const BlogPost = require("../models/blogPostModel");
 
 //@desc Create one blog post
 //@route POST /blogs/
-//@access private
+//@access public
 const createBlogPost = asyncHandler(async (req: Request, res: Response) => {
   const { title, caption, category, date, timeToRead, image, content } =
     req.body;
@@ -72,7 +72,7 @@ const updateBlogPost = asyncHandler(async (req: Request, res: Response) => {
     !content
   ) {
     res.status(400);
-    throw new Error("All fields to createa  blog-post are required!");
+    throw new Error("All fields to create a blog-post are required!");
   }
   const updatedBlogPost = await BlogPost.findOneAndUpdate(
     { _id: id },
@@ -106,17 +106,36 @@ const deleteBlogPost = asyncHandler(async (req: Request, res: Response) => {
   const blogPost = await BlogPost.findOne({ _id: id });
   if (blogPost) {
     res.status(400);
-    throw new Error("An error occured deleting the blogpost");
+    throw new Error("An error occured deleting the blog-post");
   }
   res.status(200).json({ message: "Successfully deleted blog-post!" });
 });
 
-//@desc Gets blog-post preview information
+//@desc Gets the preview information of past n blog-posts
 //@route GET /blogs/
 //@access public
-const getBlogPostsPreview = asyncHandler(
+const getBlogPostPreviews = asyncHandler(
   async (req: Request, res: Response) => {
-    res.status(200).json({ message: "Get blogPost preview information" });
+    let furthestDate;
+    const limit = req.query.limit;
+    const after = req.query.after;
+    if (!limit || !after) {
+      res.status(400);
+      throw new Error("Both query params limit and after required!");
+    }
+    const blogPosts = await BlogPost.find({ date: { $gt: after } })
+      .limit(limit)
+      .select("_id title caption category date image")
+      .exec();
+    if (blogPosts.length === 0) {
+      furthestDate = after;
+    } else {
+      furthestDate = blogPosts[blogPosts.length - 1].date;
+    }
+    res.status(200).json({
+      blogPosts: blogPosts,
+      furthestDate: furthestDate,
+    });
   }
 );
 
@@ -131,5 +150,6 @@ module.exports = {
   createBlogPost,
   getBlogPostById,
   updateBlogPost,
+  getBlogPostPreviews,
   deleteBlogPost,
 };
