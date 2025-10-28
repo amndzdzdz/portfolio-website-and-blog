@@ -1,19 +1,18 @@
 import express = require("express");
+
 const {
   createBlogPost,
   getBlogPostById,
   updateBlogPost,
-  getBlogPosts,
+  getBlogPostPreviews,
   deleteBlogPost,
 } = require("../controllers/blogPostController");
 
 const router = express.Router();
-
 router.get("/:id", getBlogPostById).delete("/:id", deleteBlogPost);
-
 router
-  .get("/", getBlogPosts)
   .post("/", createBlogPost)
-  .put("/", updateBlogPost);
+  .put("/", updateBlogPost)
+  .get("/", getBlogPostPreviews);
 
 module.exports = router;
