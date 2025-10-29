@@ -140,10 +140,11 @@ const getBlogPostPreviews = asyncHandler(
 );
 
 //@desc Get all titles and ids
-//@route GET /blogs/
+//@route GET /blogs/titles/
 //@access public
 const getBlogPostTitles = asyncHandler(async (req: Request, res: Response) => {
-  res.status(200).json({ message: "Get blogPost titles" });
+  const blogPostTitles = await BlogPost.find().select("_id title").exec();
+  res.status(200).json({ blogPostTitles: blogPostTitles });
 });
 
 module.exports = {
@@ -151,5 +152,6 @@ module.exports = {
   getBlogPostById,
   updateBlogPost,
   getBlogPostPreviews,
+  getBlogPostTitles,
   deleteBlogPost,
 };
