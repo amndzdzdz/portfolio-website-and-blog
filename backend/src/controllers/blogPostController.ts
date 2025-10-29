@@ -2,9 +2,9 @@ import { Request, Response } from "express";
 import asyncHandler = require("express-async-handler");
 const BlogPost = require("../models/blogPostModel");
 
-//@desc Create one blog post
+//@desc Create one blog-post
 //@route POST /blogs/
-//@access public
+//@access private
 const createBlogPost = asyncHandler(async (req: Request, res: Response) => {
   const { title, caption, category, date, timeToRead, image, content } =
     req.body;
@@ -36,7 +36,7 @@ const createBlogPost = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({ blogPost: createdBlogPost });
 });
 
-//@desc Get one blog post
+//@desc Get one blog-post
 //@route GET /blogs/:id
 //@access public
 const getBlogPostById = asyncHandler(async (req: Request, res: Response) => {
@@ -55,7 +55,7 @@ const getBlogPostById = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({ blogPost: blogPost });
 });
 
-//@desc Update one blog post
+//@desc Update one blog-post
 //@route PUT /blogs/
 //@access private
 const updateBlogPost = asyncHandler(async (req: Request, res: Response) => {
@@ -93,9 +93,9 @@ const updateBlogPost = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({ blogPost: updatedBlogPost });
 });
 
-//@desc Delete a blog post
+//@desc Delete a blog-post
 //@route DELETE /blogs/:id
-//@access public
+//@access private
 const deleteBlogPost = asyncHandler(async (req: Request, res: Response) => {
   const id = req.params.id;
   if (!id) {
@@ -111,7 +111,7 @@ const deleteBlogPost = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({ message: "Successfully deleted blog-post!" });
 });
 
-//@desc Gets the preview information of past n blog-posts
+//@desc Get the preview information of past n blog-posts
 //@route GET /blogs/
 //@access public
 const getBlogPostPreviews = asyncHandler(
@@ -139,9 +139,9 @@ const getBlogPostPreviews = asyncHandler(
   }
 );
 
-//@desc Get all titles and ids
+//@desc Get all blog-post titles with their id's
 //@route GET /blogs/titles/
-//@access public
+//@access private
 const getBlogPostTitles = asyncHandler(async (req: Request, res: Response) => {
   const blogPostTitles = await BlogPost.find().select("_id title").exec();
   res.status(200).json({ blogPostTitles: blogPostTitles });
