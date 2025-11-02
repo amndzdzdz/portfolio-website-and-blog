@@ -7,11 +7,57 @@ export default function Navbar() {
     bg-[#0f2a4f] text-white p-4
     "
     >
-      <div className="hidden md:flex pl-4">Joseph Dziri</div>
+      <div className="hidden md:flex pl-4">
+        <p
+          className="
+        relative inline-block text-white font-semibold px-3
+        after:content-[''] after:absolute after:left-0 after:bottom-0
+        after:h-0.5 after:w-full after:bg-current
+        after:scale-x-0 after:origin-right
+        after:transition-transform after:duration-300 after:ease-out
+        hover:after:scale-x-100 hover:after:origin-left
+        "
+        >
+          Joseph Dziri
+        </p>
+      </div>
       <div className="flex justify-evenly items-center">
-        <a className="col-span-1 underline underline-offset-3 px-3">Contact</a>
-        <a className="col-span-1 underline underline-offset-3 px-3">About me</a>
-        <a className="col-span-1 underline underline-offset-3px-3">Blog</a>
+        <a
+          className="
+        relative inline-block text-white font-semibold px-3
+        after:content-[''] after:absolute after:left-0 after:bottom-0
+        after:h-0.5 after:w-full after:bg-current
+        after:scale-x-0 after:origin-right
+        after:transition-transform after:duration-300 after:ease-out
+        hover:after:scale-x-100 hover:after:origin-left
+        "
+        >
+          Contact
+        </a>
+        <a
+          className="
+        relative inline-block text-white font-semibold px-3
+        after:content-[''] after:absolute after:left-0 after:bottom-0
+        after:h-0.5 after:w-full after:bg-current
+        after:scale-x-0 after:origin-right
+        after:transition-transform after:duration-300 after:ease-out
+        hover:after:scale-x-100 hover:after:origin-left
+        "
+        >
+          About me
+        </a>
+        <a
+          className="
+        relative inline-block text-white font-semibold px-3
+        after:content-[''] after:absolute after:left-0 after:bottom-0
+        after:h-0.5 after:w-full after:bg-current
+        after:scale-x-0 after:origin-right
+        after:transition-transform after:duration-300 after:ease-out
+        hover:after:scale-x-100 hover:after:origin-left
+        "
+        >
+          Blog
+        </a>
       </div>
     </div>
   );
