@@ -1,3 +1,5 @@
+import NavbarElement from "../navbarElement/NavbarElement";
+
 export default function Navbar() {
   return (
     <>
@@ -19,56 +21,12 @@ export default function Navbar() {
     "
       >
         <div className="hidden md:flex pl-4">
-          <p
-            className="
-        relative inline-block text-white font-semibold px-3
-        after:content-[''] after:absolute after:left-0 after:bottom-0
-        after:h-0.5 after:w-full after:bg-current
-        after:scale-x-0 after:origin-right
-        after:transition-transform after:duration-300 after:ease-out
-        hover:after:scale-x-100 hover:after:origin-left
-        "
-          >
-            Joseph Dziri
-          </p>
+          <NavbarElement text="Joseph Dziri"></NavbarElement>
         </div>
         <div className="flex justify-evenly items-center">
-          <a
-            className="
-        relative inline-block text-white font-semibold px-3
-        after:content-[''] after:absolute after:left-0 after:bottom-0
-        after:h-0.5 after:w-full after:bg-current
-        after:scale-x-0 after:origin-right
-        after:transition-transform after:duration-300 after:ease-out
-        hover:after:scale-x-100 hover:after:origin-left
-        "
-          >
-            Contact
-          </a>
-          <a
-            className="
-        relative inline-block text-white font-semibold px-3
-        after:content-[''] after:absolute after:left-0 after:bottom-0
-        after:h-0.5 after:w-full after:bg-current
-        after:scale-x-0 after:origin-right
-        after:transition-transform after:duration-300 after:ease-out
-        hover:after:scale-x-100 hover:after:origin-left
-        "
-          >
-            About me
-          </a>
-          <a
-            className="
-        relative inline-block text-white font-semibold px-3
-        after:content-[''] after:absolute after:left-0 after:bottom-0
-        after:h-0.5 after:w-full after:bg-current
-        after:scale-x-0 after:origin-right
-        after:transition-transform after:duration-300 after:ease-out
-        hover:after:scale-x-100 hover:after:origin-left
-        "
-          >
-            Blog
-          </a>
+          <NavbarElement text="Contact"></NavbarElement>
+          <NavbarElement text="About me"></NavbarElement>
+          <NavbarElement text="Blog"></NavbarElement>
         </div>
       </div>
     </>
