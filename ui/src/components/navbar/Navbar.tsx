@@ -7,7 +7,7 @@ export default function Navbar() {
         className="
           fixed top-0 left-0 
           w-full h-16 md:h-20
-          bg-linear-to-r from-blue-400 to-blue-950
+          bg-linear-to-r from-white to-blue-950
           rounded-b-lg blur-md opacity-25
           group-hover:opacity-100 transition duration-1000 group-hover:duration-200
           pointer-events-none z-0
