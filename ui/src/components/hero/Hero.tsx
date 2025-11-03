@@ -33,11 +33,11 @@ export default function Hero() {
             <img
               src={josephImg}
               alt="App screenshot"
-              className="sm:w-50 md:w-120 rounded-full shadow-lg"
+              className="w-50 md:w-120 rounded-full shadow-lg"
             />
           </div>
 
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
