@@ -1,7 +1,7 @@
 export default function ExperienceSection() {
   return (
     <section className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
             My work experience
