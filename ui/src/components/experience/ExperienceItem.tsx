@@ -2,7 +2,7 @@ import type { ExperienceItemContent } from "../../types/experienceItemType";
 
 export default function ExperienceItem(props: ExperienceItemContent) {
   return (
-    <div className="flex justify-center m-15">
+    <div className="flex justify-center m-10">
       <div
         className="
             bg-white dark:bg-gray-800 border border-gray-200
