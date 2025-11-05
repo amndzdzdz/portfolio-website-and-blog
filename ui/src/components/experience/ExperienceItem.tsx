@@ -1,6 +1,6 @@
-import roedl_partner from "../../assets/roedl__partner_logo.webp";
+import type { ExperienceItemContent } from "../../types/experienceItemType";
 
-export default function ExperienceItem() {
+export default function ExperienceItem(props: ExperienceItemContent) {
   return (
     <div className="flex justify-center m-15">
       <div
@@ -17,35 +17,22 @@ export default function ExperienceItem() {
                 justify-center md:justify-start"
         >
           <img
-            src={roedl_partner}
+            src={props.image}
             alt="Company Logo"
             className="w-24 h-24 object-contain rounded-xl"
           />
         </div>
         <div className="flex flex-col justify-center">
-          <h2 className="text-2xl font-semibold mb-1">
-            Working Student – Machine Learning Engineer
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-4">
-            15.02.2002 – 15.02.2003
-          </p>
+          <h2 className="text-2xl font-semibold mb-1">{props.title}</h2>
+          <p className="text-gray-500 dark:text-gray-400 mb-4">{props.date}</p>
           <ul
             className="
                 list-disc list-inside text-gray-700 
                 dark:text-gray-300 leading-relaxed"
           >
-            <li>
-              Developed and optimized machine learning models for
-              performance-critical systems.
-            </li>
-            <li>
-              Assisted in automating model evaluation and data preprocessing
-              workflows.
-            </li>
-            <li>
-              Collaborated with data scientists to improve training efficiency
-              and documentation.
-            </li>
+            {props.bulletpoints.map((bulletpoint) => (
+              <li>{bulletpoint}</li>
+            ))}
           </ul>
         </div>
       </div>
