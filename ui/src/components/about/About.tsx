@@ -2,7 +2,7 @@ import profile from "../../assets/joseph.webp";
 
 export default function About() {
   return (
-    <section className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <section className="min-h-screen flex items-center bg-gray-50 text-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-6 w-full">
         <div className="w-full sm:w-1/2 flex justify-center">
           <img
