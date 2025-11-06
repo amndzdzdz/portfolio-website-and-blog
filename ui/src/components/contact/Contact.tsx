@@ -1,3 +1,5 @@
+import ContactForm from "./ContactForm";
+
 export default function Contact() {
   return (
     <section className="bg-linear-to-r from-blue-600 to-indigo-700 text-white">
@@ -8,7 +10,7 @@ export default function Contact() {
               Get in contact with me!
             </h1>
           </div>
-          Here should be the formula
+          <ContactForm></ContactForm>
         </div>
       </section>
     </section>
