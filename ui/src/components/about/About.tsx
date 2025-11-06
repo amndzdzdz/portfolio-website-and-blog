@@ -12,7 +12,17 @@ export default function About() {
           />
         </div>
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+          <h1
+            className="
+          text-4xl md:text-6xl font-extrabold mb-6 leading-tight
+        relative inline-block px-3 md:py-2
+        after:content-[''] after:absolute after:left-0 after:bottom-0
+        after:h-1 after:w-full after:bg-current
+        after:scale-x-0 after:origin-right
+        after:transition-transform after:duration-300 after:ease-out
+        hover:after:scale-x-100 hover:after:origin-left
+          "
+          >
             A little bit about me
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
