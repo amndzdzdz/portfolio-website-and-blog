@@ -1,7 +1,7 @@
 import edhec from "../../assets/edhec.webp";
 import thi from "../../assets/thi.webp";
 import mannheim from "../../assets/uni_mannheim.webp";
-import type { EducationSectionItemType } from "../navbarElement/EducationSectionItem";
+import type { EducationSectionItemType } from "../../types/educationSectionItemType";
 import EducationSectionItem from "./EducationSectionItem";
 
 const education: EducationSectionItemType[] = [
