@@ -1,6 +1,9 @@
-export default function NavbarElement({ text }: { text: string }) {
+import type { NavbarElementType } from "../types/NavbarElementType";
+
+export default function NavbarElement(navbarElement: NavbarElementType) {
   return (
     <a
+      href={navbarElement.href}
       className="
         relative inline-block text-white font-semibold px-3 md:py-2
         after:content-[''] after:absolute after:left-0 after:bottom-0
@@ -11,7 +14,7 @@ export default function NavbarElement({ text }: { text: string }) {
         hover:cursor-pointer
         "
     >
-      {text}
+      {navbarElement.text}
     </a>
   );
 }
