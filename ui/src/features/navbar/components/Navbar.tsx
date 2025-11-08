@@ -4,6 +4,7 @@ export default function Navbar() {
   return (
     <>
       <div
+        id="navbar"
         className="
           fixed top-0 left-0 
           w-full h-16 md:h-20

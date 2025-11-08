@@ -3,7 +3,10 @@ import profile from "../../../assets/joseph.webp";
 
 export default function Contact() {
   return (
-    <section className="min-h-screen bg-linear-to-r from-blue-600 to-indigo-700 text-white flex items-center">
+    <section
+      id="contact-section"
+      className="min-h-screen bg-linear-to-r from-blue-600 to-indigo-700 text-white flex items-center"
+    >
       <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col-reverse md:flex-row items-center justify-center gap-12 w-full">
         <div className="w-full md:w-1/2 text-center justify-center md:text-left">
           <h1 className="text-4xl md:flex md:text-6xl font-extrabold mb-6 leading-tight">

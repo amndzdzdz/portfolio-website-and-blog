@@ -24,7 +24,10 @@ const education: EducationSectionItemType[] = [
 
 export default function EducationSection() {
   return (
-    <section className="min-h-screen sm:pt-15 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <section
+      id="education-section"
+      className="min-h-screen sm:pt-15 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100"
+    >
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-12">
           <div className="flex-1 hidden sm:block"></div>

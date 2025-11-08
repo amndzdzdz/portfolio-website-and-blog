@@ -8,6 +8,7 @@ export default function NavbarElement({ text }: { text: string }) {
         after:scale-x-0 after:origin-right
         after:transition-transform after:duration-300 after:ease-out
         hover:after:scale-x-100 hover:after:origin-left
+        hover:cursor-pointer
         "
     >
       {text}
