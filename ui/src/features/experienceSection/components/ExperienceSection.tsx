@@ -39,19 +39,23 @@ export default function ExperienceSection() {
         >
           <h1
             className="
-                text-4xl md:text-6xl font-extrabold mb-6 leading-tight
-                relative inline-block px-3 md:py-2
-                after:content-[''] after:absolute after:left-0 after:bottom-0
-                after:h-1 after:w-full after:bg-current
-                after:scale-x-0 after:origin-right
-                after:transition-transform after:duration-300 after:ease-out
-                hover:after:scale-x-100 hover:after:origin-left
+              text-4xl md:text-6xl font-extrabold mb-6 leading-tight
+              relative inline-block px-3 md:py-2
+              after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:h-1 after:w-full after:bg-current
+              after:scale-x-0 after:origin-right
+              after:transition-transform after:duration-300 after:ease-out
+              hover:after:scale-x-100 hover:after:origin-left
           "
           >
             My work experience
           </h1>
         </div>
-        <p className="text-lg mt-5 text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p
+          className="
+            text-lg mt-5 text-gray-600 dark:text-gray-300 leading-relaxed
+        "
+        >
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea

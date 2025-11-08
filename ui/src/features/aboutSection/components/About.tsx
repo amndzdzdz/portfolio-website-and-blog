@@ -6,7 +6,12 @@ export default function About() {
       id="about-section"
       className="min-h-screen flex items-center bg-gray-50 text-gray-800"
     >
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-6 w-full">
+      <div
+        className="
+          max-w-7xl mx-auto px-6 py-12 flex flex-col 
+          md:flex-row items-center gap-6 w-full
+      "
+      >
         <div className="w-full sm:w-1/2 flex justify-center">
           <img
             src={profile}
@@ -17,13 +22,13 @@ export default function About() {
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h1
             className="
-          text-4xl md:text-6xl font-extrabold mb-6 leading-tight
-        relative inline-block px-3 md:py-2
-        after:content-[''] after:absolute after:left-0 after:bottom-0
-        after:h-1 after:w-full after:bg-current
-        after:scale-x-0 after:origin-right
-        after:transition-transform after:duration-300 after:ease-out
-        hover:after:scale-x-100 hover:after:origin-left
+              text-4xl md:text-6xl font-extrabold mb-6 leading-tight
+              relative inline-block px-3 md:py-2
+              after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:h-1 after:w-full after:bg-current
+              after:scale-x-0 after:origin-right
+              after:transition-transform after:duration-300 after:ease-out
+              hover:after:scale-x-100 hover:after:origin-left
           "
           >
             A little bit about me

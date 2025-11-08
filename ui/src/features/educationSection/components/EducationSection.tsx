@@ -8,17 +8,29 @@ const education: EducationSectionItemType[] = [
   {
     image: mannheim,
     uniName: "University of Mannheim",
-    text: "I earned my foundational education at the University of Mannheim, where I gained a strong grounding in economics and quantitative methods. The university’s rigorous academic environment and diverse student community helped me develop analytical thinking and problem-solving skills that are essential in today’s business world.",
+    text: "I earned my foundational education at the University of Mannheim, \
+    where I gained a strong grounding in economics and quantitative methods. \
+     The university’s rigorous academic environment and diverse student \
+     community helped me develop analytical thinking and problem-solving \
+     skills that are essential in today’s business world.",
   },
   {
     image: edhec,
     uniName: "EDHEC Business School",
-    text: "I further enhanced my international perspective at EDHEC Business School, known for its expertise in finance and global business. Studying there allowed me to engage with a multicultural student body, deepen my knowledge of international markets, and develop a strategic mindset for tackling complex business challenges.",
+    text: "I further enhanced my international perspective at EDHEC \
+    Business School, known for its expertise in finance and global business. \
+    Studying there allowed me to engage with a multicultural student body, \
+    deepen my knowledge of international markets, and develop a strategic \
+    mindset for tackling complex business challenges.",
   },
   {
     image: thi,
     uniName: "Technical University of Ingolstadt",
-    text: "I completed my bachelor’s degree in Economics at the Technical University of Ingolstadt, located in the heart of Bavaria. The university is known for its strong focus on innovation, technology, and practical learning, providing students with a dynamic environment that connects theory with real-world application.",
+    text: "I completed my bachelor’s degree in Economics at the Technical \
+    University of Ingolstadt, located in the heart of Bavaria. The university \
+    is known for its strong focus on innovation, technology, and practical \
+    learning, providing students with a dynamic environment that connects \
+    theory with real-world application.",
   },
 ];
 
@@ -26,22 +38,30 @@ export default function EducationSection() {
   return (
     <section
       id="education-section"
-      className="min-h-screen sm:pt-15 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100"
+      className="
+        min-h-screen sm:pt-15 bg-gray-50 
+        dark:bg-gray-900 text-gray-800 dark:text-gray-100
+      "
     >
       <div className="max-w-7xl mx-auto px-6 py-12 w-full">
-        <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mb-12">
+        <div
+          className="
+              flex flex-col sm:flex-row justify-center 
+              sm:justify-between items-center mb-12
+        "
+        >
           <div className="flex-1 hidden sm:block"></div>
           <div className="flex-1 flex justify-center">
             <h1
               className="
-        text-4xl md:text-6xl font-extrabold mb-6 leading-tight
-        relative inline-block px-3 py-2
-        after:content-[''] after:absolute after:left-0 after:bottom-0
-        after:h-1 after:w-full after:bg-current
-        after:scale-x-0 after:origin-left
-        after:transition-transform after:duration-300 after:ease-out
-        hover:after:scale-x-100
-      "
+                text-4xl md:text-6xl font-extrabold mb-6 leading-tight
+                relative inline-block px-3 py-2
+                after:content-[''] after:absolute after:left-0 after:bottom-0
+                after:h-1 after:w-full after:bg-current
+                after:scale-x-0 after:origin-left
+                after:transition-transform after:duration-300 after:ease-out
+                hover:after:scale-x-100
+            "
             >
               My education
             </h1>
