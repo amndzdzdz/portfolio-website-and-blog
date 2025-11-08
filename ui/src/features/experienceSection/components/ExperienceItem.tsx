@@ -1,4 +1,4 @@
-import type { ExperienceItemContent } from "../../types/experienceItemType";
+import type { ExperienceItemContent } from "../types/experienceItemType";
 
 export default function ExperienceItem(props: ExperienceItemContent) {
   return (

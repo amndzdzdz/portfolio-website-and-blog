@@ -1,4 +1,4 @@
-import josephImg from "../../assets/joseph.webp";
+import josephImg from "../../../assets/joseph.webp";
 
 export default function Hero() {
   return (

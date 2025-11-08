@@ -1,4 +1,4 @@
-import type { EducationSectionItemType } from "../../types/educationSectionItemType";
+import type { EducationSectionItemType } from "../types/educationSectionItemType";
 
 export default function EducationSectionItem(props: EducationSectionItemType) {
   return (

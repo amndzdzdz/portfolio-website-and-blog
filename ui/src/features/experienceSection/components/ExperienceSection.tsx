@@ -1,5 +1,5 @@
-import roedl_partner from "../../assets/roedl__partner_logo.webp";
-import vrb from "../../assets/vrb.webp";
+import roedl_partner from "../../../assets/roedl__partner_logo.webp";
+import vrb from "../../../assets/vrb.webp";
 import ExperienceItem from "./ExperienceItem";
 
 const experiences = [

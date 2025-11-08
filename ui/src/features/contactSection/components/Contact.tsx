@@ -1,5 +1,5 @@
 import ContactForm from "./ContactForm";
-import profile from "../../assets/joseph.webp";
+import profile from "../../../assets/joseph.webp";
 
 export default function Contact() {
   return (
