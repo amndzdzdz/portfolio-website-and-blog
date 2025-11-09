@@ -1,10 +1,10 @@
 import edhec from "../../../assets/edhec.webp";
 import thi from "../../../assets/thi.webp";
 import mannheim from "../../../assets/uni_mannheim.webp";
-import type { EducationSectionItemType } from "../types/educationSectionItemType";
+import type { InformationItem } from "../../../types/InformationItem";
 import EducationSectionItem from "./EducationSectionItem";
 
-const education: EducationSectionItemType[] = [
+const education: InformationItem[] = [
   {
     image: mannheim,
     uniName: "University of Mannheim",

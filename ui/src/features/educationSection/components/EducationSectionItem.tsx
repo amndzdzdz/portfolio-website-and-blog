@@ -1,6 +1,6 @@
-import type { EducationSectionItemType } from "../types/educationSectionItemType";
+import type { InformationItem } from "../../../types/InformationItem";
 
-export default function EducationSectionItem(props: EducationSectionItemType) {
+export default function EducationSectionItem(props: InformationItem) {
   return (
     <div
       className="
