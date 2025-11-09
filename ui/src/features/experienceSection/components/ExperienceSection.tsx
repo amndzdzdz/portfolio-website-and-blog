@@ -1,70 +1,76 @@
-import roedl_partner from "../../../assets/roedl__partner_logo.webp";
-import vrb from "../../../assets/vrb.webp";
+import roedlAndPartner from "../../../assets/roedl__partner_logo.webp";
+import vrBank from "../../../assets/vrb.webp";
+import type { InformationItem } from "../../../types/InformationItem";
 import ExperienceItem from "./ExperienceItem";
 
-const experiences = [
+const education: InformationItem[] = [
   {
-    image: roedl_partner,
-    title: "Internship - Audit",
-    date: "Sept 2025 - present",
-    bulletpoints: ["I did x", "then I did y", "THen I did z"],
+    image: roedlAndPartner,
+    uniName: "Internship - Audit",
+    text: "I earned my foundational education at the University of Mannheim, \
+    where I gained a strong grounding in economics and quantitative methods. \
+     The university’s rigorous academic environment and diverse student \
+     community helped me develop analytical thinking and problem-solving \
+     skills that are essential in today’s business world.",
   },
   {
-    image: vrb,
-    title: "Working Student - Sales Management",
-    date: "Dec 2023 - July 2024",
-    bulletpoints: ["I did x", "then I did y", "THen I did z"],
+    image: vrBank,
+    uniName: "Working Student - Data Analyst",
+    text: "I further enhanced my international perspective at EDHEC \
+    Business School, known for its expertise in finance and global business. \
+    Studying there allowed me to engage with a multicultural student body, \
+    deepen my knowledge of international markets, and develop a strategic \
+    mindset for tackling complex business challenges.",
   },
   {
-    image: vrb,
-    title: "Internship - Corporate Client Advisor",
-    date: "Aug 2023 - Sept 2023",
-    bulletpoints: ["I did x", "then I did y", "THen I did z"],
+    image: vrBank,
+    uniName: "Internship - Client Advisory",
+    text: "I completed my bachelor’s degree in Economics at the Technical \
+    University of Ingolstadt, located in the heart of Bavaria. The university \
+    is known for its strong focus on innovation, technology, and practical \
+    learning, providing students with a dynamic environment that connects \
+    theory with real-world application.",
   },
 ];
 
-export default function ExperienceSection() {
+export default function EducationSection() {
   return (
     <section
-      id="experience-section"
+      id="education-section"
       className="
-        bg-gray-50 dark:bg-gray-900
-        text-gray-800 dark:text-gray-100"
+        min-h-screen sm:pt-15 bg-gray-50 
+        dark:bg-gray-900 text-gray-800 dark:text-gray-100
+      "
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         <div
           className="
-            flex flex-col md:flex-row 
-            items-center justify-between gap-8"
-        >
-          <h1
-            className="
-              text-4xl md:text-6xl font-extrabold mb-6 leading-tight
-              relative inline-block px-3 md:py-2
-              after:content-[''] after:absolute after:left-0 after:bottom-0
-              after:h-1 after:w-full after:bg-current
-              after:scale-x-0 after:origin-right
-              after:transition-transform after:duration-300 after:ease-out
-              hover:after:scale-x-100 hover:after:origin-left
-          "
-          >
-            My work experience
-          </h1>
-        </div>
-        <p
-          className="
-            text-lg mt-5 text-gray-600 dark:text-gray-300 leading-relaxed
+              flex flex-col sm:flex-row justify-center 
+              sm:justify-between items-center mb-12
         "
         >
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
-        </p>
-        <ExperienceItem {...experiences[0]}></ExperienceItem>
-        <ExperienceItem {...experiences[1]}></ExperienceItem>
-        <ExperienceItem {...experiences[2]}></ExperienceItem>
+          <div className="flex-1 flex justify-center">
+            <h1
+              className="
+                text-4xl md:text-6xl font-extrabold mb-6 leading-tight
+                relative inline-block px-3 py-2
+                after:content-[''] after:absolute after:left-0 after:bottom-0
+                after:h-1 after:w-full after:bg-current
+                after:scale-x-0 after:origin-left
+                after:transition-transform after:duration-300 after:ease-out
+                hover:after:scale-x-100
+            "
+            >
+              My work experience
+            </h1>
+          </div>
+          <div className="flex-1 hidden sm:block"></div>
+        </div>
+        <div className="flex flex-col gap-10">
+          <ExperienceItem {...education[0]} />
+          <ExperienceItem {...education[1]} />
+          <ExperienceItem {...education[2]} />
+        </div>
       </div>
     </section>
   );

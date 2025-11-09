@@ -1,39 +1,31 @@
-import type { ExperienceItemContent } from "../types/experienceItemType";
+import type { InformationItem } from "../../../types/InformationItem";
 
-export default function ExperienceItem(props: ExperienceItemContent) {
+export default function ExperienceItem(props: InformationItem) {
   return (
-    <div className="flex justify-center mt-10">
-      <div
-        className="
-          bg-white dark:bg-gray-800 border border-gray-200
-          dark:border-gray-700 shadow-blue-200 shadow-sm hover:shadow-lg 
-          transition-shadow w-full max-w-4xl p-8 flex flex-col 
-          md:flex-row gap-6
-          "
-      >
-        <div
-          className="
-            shrink-0 flex items-center 
-            justify-center md:justify-start"
-        >
-          <img
-            src={props.image}
-            alt="Company Logo"
-            className="w-24 h-24 object-contain rounded-xl"
-          />
-        </div>
-        <div className="flex flex-col justify-center">
-          <h2 className="text-2xl font-semibold mb-1">{props.title}</h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-4">{props.date}</p>
-          <ul
+    <div
+      className="
+        flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0
+    "
+    >
+      <div className="flex-1 pr-0 md:pr-8 flex justify-center md:justify-end">
+        <img
+          src={props.image}
+          alt={props.uniName}
+          className="w-32 h-32 md:w-30 md:h-30 object-cover shadow-md"
+        />
+      </div>
+      <div className="flex-1 flex justify-center md:justify-start pl-0 md:pl-8">
+        <div className="w-full md:w-4/4">
+          <h2 className="text-xl font-semibold text-center md:text-left">
+            {props.uniName}
+          </h2>
+          <p
             className="
-              list-disc list-inside text-gray-700 
-              dark:text-gray-300 leading-relaxed"
+             text-gray-600 dark:text-gray-300 text-center md:text-left
+          "
           >
-            {props.bulletpoints.map((bulletpoint) => (
-              <li>{bulletpoint}</li>
-            ))}
-          </ul>
+            {props.text}
+          </p>
         </div>
       </div>
     </div>
