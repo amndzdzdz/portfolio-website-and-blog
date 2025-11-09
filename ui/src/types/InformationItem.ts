@@ -1,4 +1,4 @@
-export type EducationSectionItemType = {
+export type InformationItem = {
   image: string;
   uniName: string;
   text: string;
