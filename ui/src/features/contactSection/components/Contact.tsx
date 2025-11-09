@@ -6,7 +6,7 @@ export default function Contact() {
     <section
       id="contact-section"
       className="
-      min-h-screen bg-linear-to-r from-blue-600 
+      min-h-screen bg-linear-to-r from-blue-600 mt-12 sm:mt-0
       to-indigo-700 text-white flex items-center
       "
     >

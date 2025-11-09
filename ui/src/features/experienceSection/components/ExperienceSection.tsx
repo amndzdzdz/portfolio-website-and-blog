@@ -38,11 +38,11 @@ export default function EducationSection() {
     <section
       id="education-section"
       className="
-        min-h-screen sm:pt-15 bg-gray-50 
-        dark:bg-gray-900 text-gray-800 dark:text-gray-100
+        min-h-screen bg-gray-50 
+        dark:bg-gray-900 text-gray-800 mt-12 sm:mt-0 dark:text-gray-100
       "
     >
-      <div className="max-w-7xl mx-auto px-6 py-12 w-full">
+      <div className="max-w-7xl mx-auto px-6 w-full">
         <div
           className="
               flex flex-col sm:flex-row justify-center 
