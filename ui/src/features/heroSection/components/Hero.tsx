@@ -4,10 +4,18 @@ export default function Hero() {
   return (
     <section
       id="hero-section"
-      className="min-h-screen bg-linear-to-r from-blue-600 to-indigo-700 text-white flex items-center"
+      className="
+        min-h-screen bg-linear-to-r from-blue-600 to-indigo-700
+        text-white flex items-center py-24
+      "
     >
-      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col-reverse md:flex-row items-center gap-12 w-full">
-        <div className="w-full md:w-1/2 text-center md:text-left">
+      <div
+        className="
+          max-w-7xl mx-auto w-full px-6 flex 
+          flex-col-reverse md:flex-row items-center gap-6
+          "
+      >
+        <div className="w-full sm:w-1/2 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
             Hey, I'm Joseph Dziri
           </h1>
@@ -17,14 +25,20 @@ export default function Hero() {
           </p>
           <div className="flex justify-center md:justify-start gap-4">
             <a
-              href="#get-started"
-              className="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-50 transition"
+              href="#about-section"
+              className="
+                bg-white text-blue-700 font-semibold px-6 py-3 
+                rounded-lg shadow-md hover:bg-blue-50 transition
+              "
             >
               Get to know me
             </a>
             <a
               href="#learn-more"
-              className="border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition"
+              className="
+                border border-white text-white font-semibold 
+                px-6 py-3 rounded-lg hover:bg-white/10 transition
+              "
             >
               My blog
             </a>
@@ -39,7 +53,12 @@ export default function Hero() {
           />
         </div>
 
-        <div className="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div
+          className="
+            hidden sm:block absolute bottom-8 
+            left-1/2 transform -translate-x-1/2
+        "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
