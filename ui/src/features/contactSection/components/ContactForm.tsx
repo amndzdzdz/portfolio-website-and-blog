@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function ContactForm() {
+  const [isEmpty, setIsEmpty] = useState(true);
+
   return (
     <div className="w-full max-w-md mx-auto">
       <form
@@ -47,10 +51,16 @@ export default function ContactForm() {
         <div className="flex justify-center gap-4">
           <button
             type="submit"
-            className="
+            disabled={isEmpty}
+            className={`
               bg-blue-500 hover:bg-blue-600 text-white 
               font-bold py-2 px-4 rounded
-            "
+              ${
+                isEmpty
+                  ? "disabled:cursor-not-allowed disabled:bg-gray-400"
+                  : ""
+              }
+            `}
           >
             Send
           </button>
