@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [isEmpty, setIsEmpty] = useState(true);
+  const [isEmailEmpty, setIsEmailEmpty] = useState(true);
+  const [isInputEmpty, setIsInputEmpty] = useState(true);
 
   return (
     <div className="w-full max-w-md mx-auto">
@@ -23,6 +24,13 @@ export default function ContactForm() {
           <input
             id="email"
             type="email"
+            onChange={(e) => {
+              if (e.target.value.length > 0) {
+                setIsEmailEmpty(false);
+              } else {
+                setIsEmailEmpty(true);
+              }
+            }}
             placeholder="email"
             className="
               shadow appearance-none border rounded w-full 
@@ -40,6 +48,13 @@ export default function ContactForm() {
           </label>
           <textarea
             id="text"
+            onChange={(e) => {
+              if (e.target.value.length > 0) {
+                setIsInputEmpty(false);
+              } else {
+                setIsInputEmpty(true);
+              }
+            }}
             placeholder="What do you want to tell me?"
             className="
               shadow appearance-none border rounded w-full py-2 px-3 
@@ -51,12 +66,13 @@ export default function ContactForm() {
         <div className="flex justify-center gap-4">
           <button
             type="submit"
-            disabled={isEmpty}
+            disabled={isEmailEmpty || isInputEmpty}
             className={`
               bg-blue-500 hover:bg-blue-600 text-white 
               font-bold py-2 px-4 rounded
+              hover:cursor-pointer
               ${
-                isEmpty
+                isInputEmpty || isEmailEmpty
                   ? "disabled:cursor-not-allowed disabled:bg-gray-400"
                   : ""
               }
