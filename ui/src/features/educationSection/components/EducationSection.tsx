@@ -39,8 +39,7 @@ export default function EducationSection() {
     <section
       id="education-section"
       className="
-        min-h-screen bg-gray-50 mt-12 sm:mt-0
-        dark:bg-gray-900 text-gray-800 dark:text-gray-100
+        min-h-screen bg-gray-50 mt-12 sm:mt-0 text-gray-800
       "
     >
       <div className="max-w-7xl mx-auto px-6 w-full">
