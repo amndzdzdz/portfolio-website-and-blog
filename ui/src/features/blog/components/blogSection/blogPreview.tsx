@@ -1,6 +1,12 @@
-import img from "../../../../assets/blog.webp";
+import type { BlogPreviewProps } from "../types/BlogPreviewProps";
 
-export default function BlogPreview() {
+export default function BlogPreview({
+  image,
+  title,
+  caption,
+  category,
+  id,
+}: BlogPreviewProps) {
   return (
     <div id="content" className="flex flex-col items-center">
       <div
@@ -14,7 +20,7 @@ export default function BlogPreview() {
                 rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
         >
           <img
-            src={img}
+            src={image}
             alt="Blog post"
             className="w-full h-full object-cover"
           />
@@ -27,17 +33,13 @@ export default function BlogPreview() {
                 text-xs px-2 py-1 rounded-full mb-3 w-fit
                 "
           >
-            Technology
+            {category}
           </span>
-          <h1 className="text-2xl md:text-3xl font-extrabold mb-3">
-            This is going to be the title!
-          </h1>
-          <p className="text-gray-600 mb-5">
-            This is a short caption describing the blog post in 2-3 lines. It
-            gives a brief overview of what the reader can expect.
-          </p>
+          <h1 className="text-2xl md:text-3xl font-extrabold mb-3">{title}</h1>
+          <p className="text-gray-600 mb-5">{caption}</p>
           <a
             href="#read-more"
+            id={id}
             className="
                 border border-blue-600 text-blue-600 font-semibold 
                 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white 
