@@ -1,4 +1,4 @@
-import blog from "../../../assets/blog.webp";
+import blog from "../../../../assets/blog.webp";
 
 export default function Hero() {
   return (
