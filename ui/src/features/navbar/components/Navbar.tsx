@@ -33,7 +33,9 @@ export default function Navbar() {
           <NavbarElement
             {...{ text: "Contact", to: "/#contact-section" }}
           ></NavbarElement>
-          <NavbarElement {...{ text: "Blog", to: "/blog" }}></NavbarElement>
+          <NavbarElement
+            {...{ text: "Blog", to: "/blog#blog-hero" }}
+          ></NavbarElement>
         </div>
       </div>
     </>

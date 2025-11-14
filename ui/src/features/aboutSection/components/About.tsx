@@ -3,7 +3,7 @@ import profile from "../../../assets/joseph.webp";
 export default function About() {
   return (
     <section
-      id="education-section"
+      id="about-section"
       className="
         min-h-screen bg-gray-50 
         dark:bg-gray-900 text-gray-800 dark:text-gray-100

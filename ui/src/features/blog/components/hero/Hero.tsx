@@ -3,7 +3,7 @@ import blog from "../../../../assets/blog.webp";
 export default function Hero() {
   return (
     <section
-      id="hero-section"
+      id="blog-hero"
       className="
         min-h-screen bg-linear-to-r from-blue-600 to-indigo-700
         text-white flex items-center py-24

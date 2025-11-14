@@ -40,6 +40,7 @@ const blogPosts = [
 export default function BlogSection() {
   return (
     <section
+      id="blog-section"
       className="
         min-h-screen bg-gray-50 md:mt-12 text-gray-800"
     >
