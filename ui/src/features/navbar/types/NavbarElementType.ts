@@ -1,4 +1,4 @@
 export type NavbarElementType = {
   text: string;
-  href: string;
+  to: string;
 };

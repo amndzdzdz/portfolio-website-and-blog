@@ -1,9 +1,10 @@
 import type { NavbarElementType } from "../types/NavbarElementType";
+import { Link } from "react-router-dom";
 
 export default function NavbarElement(navbarElement: NavbarElementType) {
   return (
-    <a
-      href={navbarElement.href}
+    <Link
+      to={navbarElement.to}
       className="
         relative inline-block text-white font-semibold px-3 md:py-2
         after:content-[''] after:absolute after:left-0 after:bottom-0
@@ -15,6 +16,6 @@ export default function NavbarElement(navbarElement: NavbarElementType) {
         "
     >
       {navbarElement.text}
-    </a>
+    </Link>
   );
 }
