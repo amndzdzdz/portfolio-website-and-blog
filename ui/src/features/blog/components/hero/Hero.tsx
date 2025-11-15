@@ -43,7 +43,7 @@ export default function Hero() {
           </p>
           <div className="flex justify-center md:justify-start gap-4">
             <a
-              href="#about-section"
+              href="#blog-section"
               className="
                 bg-white text-blue-700 font-semibold px-6 py-3 
                 rounded-lg shadow-md hover:bg-blue-50 transition
