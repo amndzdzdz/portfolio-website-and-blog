@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import josephImg from "../../../assets/joseph.webp";
 
 export default function Hero() {
@@ -33,15 +34,15 @@ export default function Hero() {
             >
               Get to know me
             </a>
-            <a
-              href="#learn-more"
+            <Link
+              to={"/blog"}
               className="
                 border border-white text-white font-semibold 
                 px-6 py-3 rounded-lg hover:bg-white/10 transition
               "
             >
               My blog
-            </a>
+            </Link>
           </div>
         </div>
 
