@@ -9,10 +9,11 @@ export default function LoginScreen() {
       <div className="flex min-h-screen justify-center items-center">
         <form
           className="
-           bg-white text-black shadow-lg rounded-lg px-6 py-8 mb-4
+           bg-white text-black shadow-lg 
+           md:w-1/4 md:h-100 rounded-lg px-6 py-8 mb-4
       "
         >
-          <h1 className="text-2xl font-extrabold mb-6 text-center">Login</h1>
+          <h1 className="text-4xl mb-6 text-center">Login</h1>
           <div className="mb-4">
             <label
               className="block text-gray-800 text-sm font-semibold mb-2"
@@ -41,13 +42,13 @@ export default function LoginScreen() {
           <div className="mb-4">
             <label
               className="block text-gray-800 text-sm font-semibold mb-2"
-              htmlFor="email"
+              htmlFor="password"
             >
               Password
             </label>
             <input
-              id="email"
-              type="email"
+              id="password"
+              type="password"
               onChange={(e) => {
                 if (e.target.value.length > 0) {
                   setisPasswordEmpty(false);
@@ -69,7 +70,7 @@ export default function LoginScreen() {
               disabled={isEmailEmpty || isPasswordEmpty}
               className={`
               bg-blue-500 hover:bg-blue-600 text-white 
-              font-bold py-2 px-4 rounded
+              font-bold py-2 px-4 rounded md:mt-10
               hover:cursor-pointer
               ${
                 isPasswordEmpty || isEmailEmpty
