@@ -4,6 +4,7 @@ import LandingPage from "./routes/LandingPage";
 import Blog from "./routes/Blog";
 import ScrollToTop from "../utils/ScrollToTop";
 import LoginScreen from "./routes/Login";
+import Select from "./routes/Select";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<LoginScreen />} />
+        <Route path="/select" element={<Select />} />
       </Routes>
     </BrowserRouter>
   );
