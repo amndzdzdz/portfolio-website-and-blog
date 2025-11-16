@@ -42,7 +42,7 @@ export default function BlogSection() {
     <section
       id="blog-section"
       className="
-        min-h-screen bg-gray-50 md:mt-12 text-gray-800"
+        min-h-screen bg-gray-50 pb-12 md:pt-6 text-gray-800"
     >
       <BlogPreview {...blogPosts[0]}></BlogPreview>
       <BlogPreview {...blogPosts[1]}></BlogPreview>

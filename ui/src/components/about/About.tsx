@@ -5,18 +5,17 @@ export default function About() {
     <section
       id="about-section"
       className="
-        min-h-screen bg-gray-50 
-        dark:bg-gray-900 text-gray-800 dark:text-gray-100
+        bg-gray-50 text-gray-800 
       "
     >
-      <div className="max-w-7xl mx-auto px-6 pt-12 w-full">
+      <div className="max-w-7xl mx-auto px-6 pt-6 w-full">
         <div
           className="
-              flex flex-col sm:flex-row justify-center 
-              sm:justify-between items-center mb-12
+              flex flex-col lg:flex-row justify-center 
+              lg:justify-between items-center
         "
         >
-          <div className="flex-1 hidden sm:block"></div>
+          <div className="flex-1 hidden lg:block"></div>
           <div className="flex-1 flex justify-center">
             <h1
               className="
