@@ -1,7 +1,20 @@
+import { Link } from "react-router-dom";
+
 export default function ModifyPost() {
   return (
     <section className="bg-gray-50 min-h-screen">
-      <div className="flex justify-center flex-col m-20">
+      <div className="flex justify-center flex-col p-20">
+        <div className="ml-5 mt-5">
+          <Link
+            to={"/select"}
+            className="
+            bg-gray-300 text-black font-semibold px-6 py-3
+            rounded-lg shadow-md hover:bg-gray-400 transition hover:cursor-pointer
+                      "
+          >
+            Go back
+          </Link>
+        </div>
         <form>
           <div className="flex flex-col m-5">
             <label>Title</label>
