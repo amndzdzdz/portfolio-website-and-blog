@@ -26,7 +26,7 @@ export default function Select() {
             Update/Delete Blog Post
           </Link>
           <Link
-            to={"/blog"}
+            to={"/create-post"}
             className="
                 border border-white text-white font-semibold 
                 px-6 py-3 rounded-lg hover:bg-white/10 transition

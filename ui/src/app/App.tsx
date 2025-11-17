@@ -6,6 +6,7 @@ import ScrollToTop from "../utils/ScrollToTop";
 import LoginScreen from "./routes/Login";
 import Select from "./routes/Select";
 import ModifyPost from "./routes/ModifyPost";
+import CreatePost from "./routes/CreatePost";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/select" element={<Select />} />
         <Route path="/modify-post" element={<ModifyPost />} />
+        <Route path="/create-post" element={<CreatePost />} />
       </Routes>
     </BrowserRouter>
   );
