@@ -107,7 +107,7 @@ export default function ModifyPost() {
           <button
             className="
             bg-red-800 text-white font-semibold px-6 py-3 mr-5
-            rounded-lg shadow-md hover:bg-red-600 transition
+            rounded-lg shadow-md hover:bg-red-600 transition hover:cursor-pointer
                       "
           >
             Delete blog post
@@ -115,7 +115,7 @@ export default function ModifyPost() {
           <button
             className="
             bg-blue-800 text-white font-semibold px-6 py-3 
-            rounded-lg shadow-md hover:bg-blue-600 transition
+            rounded-lg shadow-md hover:bg-blue-600 transition hover:cursor-pointer
                       "
           >
             Delete blog post
