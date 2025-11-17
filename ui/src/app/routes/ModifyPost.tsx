@@ -5,37 +5,102 @@ export default function ModifyPost() {
         <form>
           <div className="flex flex-col m-5">
             <label>Title</label>
-            <input placeholder="Load blog title..."></input>
+            <input
+              required
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+              placeholder="Load blog title..."
+            ></input>
           </div>
 
           <div className="flex flex-col m-5">
             <label>Time to read</label>
-            <input type="number" placeholder="Load time to read..."></input>
+            <input
+              required
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+              type="number"
+              placeholder="Load time to read..."
+            ></input>
           </div>
 
           <div className="flex flex-col m-5">
             <label>Image</label>
-            <input type="number" placeholder="Load blog title..."></input>
+            <input
+              required
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+              type="number"
+              placeholder="Load blog title..."
+            ></input>
           </div>
 
           <div className="flex flex-col m-5">
             <label>Caption</label>
-            <input placeholder="Load blog caption..."></input>
+            <input
+              required
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+              placeholder="Load blog caption..."
+            ></input>
           </div>
 
           <div className="flex flex-col m-5">
             <label>Category</label>
-            <input placeholder="Load blog category..."></input>
+            <input
+              required
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+              placeholder="Load blog category..."
+            ></input>
           </div>
 
           <div className="flex flex-col m-5">
             <label>Content</label>
-            <textarea placeholder="Load blog content..."></textarea>
+            <textarea
+              required
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+              placeholder="Load blog content..."
+            ></textarea>
           </div>
 
           <div className="flex flex-col m-5">
             <label>Comments</label>
-            <input placeholder="Load blog comments..."></input>
+            <input
+              required
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+              placeholder="Load blog comments..."
+            ></input>
           </div>
         </form>
         <div className="flex flex-row m-5">
