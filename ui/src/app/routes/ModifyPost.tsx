@@ -17,6 +17,21 @@ export default function ModifyPost() {
         </div>
         <form>
           <div className="flex flex-col m-5">
+            <label>Select which post to change/delete</label>
+            <select
+              className="
+              bg-neutral-secondary-medium border border-default-medium 
+              text-heading text-sm rounded-base focus:ring-brand 
+              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
+              placeholder:text-body
+              "
+            >
+              <option>Placeholder 1</option>
+              <option>Placeholder 2</option>
+              <option>Placeholder 3</option>
+            </select>
+          </div>
+          <div className="flex flex-col m-5">
             <label>Title</label>
             <input
               required
