@@ -4,7 +4,7 @@ export default function ModifyPost() {
   return (
     <section className="bg-gray-50 min-h-screen">
       <div className="flex justify-center flex-col p-20">
-        <div className="ml-5 mt-5">
+        <div className="ml-5 mt-5 mb-5">
           <Link
             to={"/select"}
             className="
@@ -134,7 +134,7 @@ export default function ModifyPost() {
         <div className="flex flex-row m-5">
           <button
             className="
-            bg-red-800 text-white font-semibold px-6 py-3 mr-5
+            bg-red-500 text-white font-semibold px-6 py-3 mr-5
             rounded-lg shadow-md hover:bg-red-600 transition hover:cursor-pointer
                       "
           >
@@ -142,7 +142,7 @@ export default function ModifyPost() {
           </button>
           <button
             className="
-            bg-blue-800 text-white font-semibold px-6 py-3 
+            bg-blue-500 text-white font-semibold px-6 py-3 
             rounded-lg shadow-md hover:bg-blue-600 transition hover:cursor-pointer
                       "
           >
