@@ -7,6 +7,7 @@ import LoginScreen from "./routes/Login";
 import Select from "./routes/Select";
 import ModifyPost from "./routes/ModifyPost";
 import CreatePost from "./routes/CreatePost";
+import BlogPost from "./routes/BlogPost";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/select" element={<Select />} />
         <Route path="/modify-post" element={<ModifyPost />} />
         <Route path="/create-post" element={<CreatePost />} />
+        <Route path="blogs/:id" element={<BlogPost />} />
       </Routes>
     </BrowserRouter>
   );

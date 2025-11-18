@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { BlogPreviewProps } from "../../types/BlogPreviewProps";
 
 export default function BlogPreview({
@@ -43,8 +44,8 @@ export default function BlogPreview({
             {title}
           </h1>
           <p className="text-gray-600 line-clamp-2 mb-5">{caption}</p>
-          <a
-            href="#read-more"
+          <Link
+            to={"/blogs/this-is-a-nice-post"}
             id={id}
             className="
                 border border-blue-600 text-blue-600 font-semibold 
@@ -53,7 +54,7 @@ export default function BlogPreview({
             "
           >
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>
