@@ -49,7 +49,11 @@ export default function About() {
             </div>
             <div className="flex-1 flex justify-center md:justify-start pl-0 md:pl-8">
               <div className="w-full text-center md:text-left">
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p
+                  className="
+                    text-lg text-gray-600 dark:text-gray-300 
+                    leading-relaxed text-justify"
+                >
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -57,7 +61,11 @@ export default function About() {
                   sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
                 <br></br>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p
+                  className="
+                    text-lg text-gray-600 dark:text-gray-300 
+                    leading-relaxed text-justify"
+                >
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -65,7 +73,11 @@ export default function About() {
                   sea takimata sanctus est Lorem ipsum dolor sit amet.
                 </p>
                 <br></br>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p
+                  className="
+                text-lg text-gray-600 dark:text-gray-300 
+                leading-relaxed text-justify"
+                >
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   diam nonumy eirmod tempor invidunt ut labore et dolore magna
                   aliquyam erat, sed diam voluptua. At vero eos et accusam et

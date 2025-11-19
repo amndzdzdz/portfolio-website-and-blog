@@ -21,7 +21,7 @@ export default function ExperienceItem(props: InformationItemProps) {
           </h2>
           <p
             className="
-             text-gray-600 dark:text-gray-300 text-center md:text-left
+             text-gray-600 dark:text-gray-300 text-justify
           "
           >
             {props.text}
