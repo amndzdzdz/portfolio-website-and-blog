@@ -1,3 +1,5 @@
+import CommentSection from "../../components/comment/CommentSection";
+
 export default function BlogPost() {
   const blogPost = {
     id: "1",
@@ -138,30 +140,33 @@ start building your own applications from scratch.
   };
 
   return (
-    <section className="min-h-screen bg-gray-50 py-30">
-      <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-          {blogPost.title}
-        </h1>
+    <>
+      <section className="min-h-screen bg-gray-50 py-30">
+        <div className="max-w-4xl mx-auto px-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            {blogPost.title}
+          </h1>
 
-        <div className="flex items-center text-gray-600 space-x-2 mb-10">
-          <span>Joseph Dziri</span>
-          <span>•</span>
-          <span>{blogPost.timeToRead}</span>
-          <span>•</span>
-          <span>17.11.2025</span>
+          <div className="flex items-center text-gray-600 space-x-2 mb-10">
+            <span>Joseph Dziri</span>
+            <span>•</span>
+            <span>{blogPost.timeToRead}</span>
+            <span>•</span>
+            <span>17.11.2025</span>
+          </div>
+
+          <img
+            className="rounded-xl shadow-lg w-full mb-12"
+            src={blogPost.image}
+            alt="Blog Image"
+          />
+
+          <article className="text-justify ">
+            <p className="text-gray-700">{blogPost.content}</p>
+          </article>
         </div>
-
-        <img
-          className="rounded-xl shadow-lg w-full mb-12"
-          src={blogPost.image}
-          alt="Blog Image"
-        />
-
-        <article className="text-justify ">
-          <p className="text-gray-700">{blogPost.content}</p>
-        </article>
-      </div>
-    </section>
+      </section>
+      <CommentSection {...blogPost.comments}></CommentSection>
+    </>
   );
 }
