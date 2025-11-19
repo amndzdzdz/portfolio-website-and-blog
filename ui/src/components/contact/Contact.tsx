@@ -1,6 +1,11 @@
 import ContactForm from "./ContactForm";
 import profile from "../../assets/joseph.webp";
 
+const formProps = {
+  title: "Send me an email!",
+  onSubmit: { this: "that" },
+};
+
 export default function Contact() {
   return (
     <section
@@ -38,7 +43,7 @@ export default function Contact() {
             />
           </div>
         </div>
-        <ContactForm></ContactForm>
+        <ContactForm {...formProps}></ContactForm>
       </div>
     </section>
   );
