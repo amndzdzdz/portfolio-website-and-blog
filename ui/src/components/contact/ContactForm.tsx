@@ -1,6 +1,7 @@
 import { useState } from "react";
+import type { FormProps } from "../../types/FormProps";
 
-export default function ContactForm() {
+export default function ContactForm(formProps: FormProps) {
   const [isEmailEmpty, setIsEmailEmpty] = useState(true);
   const [isInputEmpty, setIsInputEmpty] = useState(true);
 
@@ -12,7 +13,7 @@ export default function ContactForm() {
       "
       >
         <h1 className="text-2xl font-extrabold mb-6 text-center">
-          Send me an email!
+          {formProps.title}
         </h1>
         <div className="mb-4">
           <label
