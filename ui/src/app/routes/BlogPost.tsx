@@ -1,13 +1,12 @@
 import CommentSection from "../../components/comment/CommentSection";
 
-export default function BlogPost() {
-  const blogPost = {
-    id: "1",
-    title: "How to Build a React App From Scratch",
-    image:
-      "https://hasthemes.com/blog/wp-content/uploads/2021/10/react-blog-templates.jpg",
-    timeToRead: "6 min",
-    content: `Building a React application from scratch might sound overwhelming, 
+const blogPost = {
+  id: "1",
+  title: "How to Build a React App From Scratch",
+  image:
+    "https://hasthemes.com/blog/wp-content/uploads/2021/10/react-blog-templates.jpg",
+  timeToRead: "6 min",
+  content: `Building a React application from scratch might sound overwhelming, 
 but it's much easier than it seems once you understand the underlying 
 concepts. In this guide, we'll walk through setting up your environment, 
 creating components, and managing state effectively. By the end, you'll 
@@ -117,28 +116,35 @@ components, state, and reactivity work together, the process becomes
 incredibly enjoyable. Now that you have the fundamentals, go ahead and 
 start building your own applications from scratch.
 `,
-    comments: [
-      {
-        id: "c1",
-        author: "Sarah Jones",
-        text: "Really helpful breakdown!",
-        date: "2025-01-15",
-      },
-      {
-        id: "c2",
-        author: "Mark Peterson",
-        text: "State management follow-up, please!",
-        date: "2025-01-16",
-      },
-      {
-        id: "c3",
-        author: "Aisha Karim",
-        text: "Loved the explanation — super beginner friendly.",
-        date: "2025-01-18",
-      },
-    ],
-  };
+  comments: [
+    {
+      id: "c1",
+      author: "Alice Johnson",
+      date: "2025-01-14",
+      text: "This is a great post! Really enjoyed the insights.",
+    },
+    {
+      id: "c2",
+      author: "Michael Chen",
+      date: "2025-01-13",
+      text: "I think you could expand on the last section, but overall very helpful.",
+    },
+    {
+      id: "c3",
+      author: "Sara Khalid",
+      date: "2025-01-11",
+      text: "Thanks for sharing this. Looking forward to more content!",
+    },
+    {
+      id: "c4",
+      author: "David P.",
+      date: "2025-01-10",
+      text: "Amazing write-up. Clear, concise, and informative.",
+    },
+  ],
+};
 
+export default function BlogPost() {
   return (
     <>
       <section className="min-h-screen bg-gray-50 py-30">
@@ -166,7 +172,7 @@ start building your own applications from scratch.
           </article>
         </div>
       </section>
-      <CommentSection {...blogPost.comments}></CommentSection>
+      <CommentSection comments={blogPost.comments}></CommentSection>
     </>
   );
 }
