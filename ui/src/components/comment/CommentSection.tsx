@@ -1,13 +1,17 @@
 import ContactForm from "../../components/contact/ContactForm";
-import profile from "../../assets/joseph.webp";
 import type { CommentProps } from "../../types/CommentProps";
+import Comment from "./Comment";
 
 const formProps = {
   title: "Write a comment!",
   onSubmit: { this: "that" },
 };
 
-export default function CommentSection(comments: CommentProps[]) {
+export default function CommentSection({
+  comments,
+}: {
+  comments: CommentProps[];
+}) {
   return (
     <section
       id="contact-section"
@@ -23,26 +27,16 @@ export default function CommentSection(comments: CommentProps[]) {
       "
       >
         <div
-          className="
+          className=" bg-white min-h-screen p-10 md:p-20 rounded-2xl
             w-full md:w-1/2 text-center justify-center md:text-left
         "
         >
-          <h1
-            className="
-              text-4xl md:flex md:text-6xl font-extrabold mb-6 leading-tight
-          "
-          >
-            Get in contact with me!
+          <h1 className="text-black text-2xl font-extrabold">
+            Tell me your opinion in the comments!
           </h1>
-          <div className="flex items-center justify-center">
-            <img
-              src={profile}
-              alt="Profile"
-              className="
-                w-1/2 md:text-left max-w-md rounded-full shadow-lg object-cover
-              "
-            />
-          </div>
+          {comments.map((comment) => {
+            return <Comment {...comment}></Comment>;
+          })}
         </div>
         <ContactForm {...formProps}></ContactForm>
       </div>
