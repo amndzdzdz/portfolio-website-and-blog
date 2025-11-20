@@ -9,7 +9,7 @@ export default function ContactForm(formProps: FormProps) {
     <div className="w-full max-w-md mx-auto">
       <form
         className="
-           bg-white text-black shadow-lg rounded-lg px-6 py-8 mb-4
+           bg-white text-black shadow-lg rounded-2xl px-6 py-8 mb-4
       "
       >
         <h1 className="text-2xl font-extrabold mb-6 text-center">
