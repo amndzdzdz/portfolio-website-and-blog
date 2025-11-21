@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import SunEditor from "suneditor-react";
+import { buttonList } from "suneditor-react";
+import "suneditor/dist/css/suneditor.min.css";
 
 export default function CreatePost() {
   return (
@@ -90,16 +93,11 @@ export default function CreatePost() {
 
           <div className="flex flex-col m-5">
             <label>Content</label>
-            <textarea
-              required
-              className="
-              bg-neutral-secondary-medium border border-default-medium 
-              text-heading text-sm rounded-base focus:ring-brand 
-              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
-              placeholder:text-body
-              "
-              placeholder="Enter blog content..."
-            ></textarea>
+            <SunEditor
+              setOptions={{
+                buttonList: buttonList.complex,
+              }}
+            ></SunEditor>
           </div>
 
           <div className="flex flex-col m-5">
