@@ -59,7 +59,7 @@ export default function CreatePost() {
               placeholder:text-body
               "
               type="number"
-              placeholder="Enter blog title..."
+              placeholder="Enter cover image..."
             ></input>
           </div>
 
@@ -98,20 +98,6 @@ export default function CreatePost() {
                 buttonList: buttonList.complex,
               }}
             ></SunEditor>
-          </div>
-
-          <div className="flex flex-col m-5">
-            <label>Comments</label>
-            <input
-              required
-              className="
-              bg-neutral-secondary-medium border border-default-medium 
-              text-heading text-sm rounded-base focus:ring-brand 
-              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
-              placeholder:text-body
-              "
-              placeholder="Enter blog comments..."
-            ></input>
           </div>
         </form>
         <div className="flex flex-row m-5">

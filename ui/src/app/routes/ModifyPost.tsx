@@ -143,7 +143,7 @@ export default function ModifyPost() {
             rounded-lg shadow-md hover:bg-blue-600 transition hover:cursor-pointer
                       "
           >
-            Delete blog post
+            Update blog post
           </button>
         </div>
       </div>
