@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: "24.x"
           cache: "npm"
+          cache-dependency-path: backend/package-lock.json
 
       - name: Create env file
         working-directory: backend
