@@ -38,3 +38,15 @@ Routes:
   update a blog
 
 The other data for the portfolio is hardcoded in the frontend.
+
+Middleware:
+
+- errorHandler
+- rateLimitErrorHandler
+- validateTokenHandler
+
+[] RateLimitHandler
+[] Email, password, username checker through middleware
+[] Cookie session handler
+[] 2 Factor auth
+[] Forgot password
