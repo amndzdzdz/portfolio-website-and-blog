@@ -1,0 +1,38 @@
+name: Frontend CI pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+          cache: "npm"
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ui
+        run: npm install
+
+      - name: Run build
+        working-directory: ui
+        run: npm run build --if-present
+
+      - name: Run linter and formatter
+        working-directory: ui
+        run: |
+          npm run format:check --write
+          npx prettier --write .

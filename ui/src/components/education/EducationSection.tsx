@@ -1,36 +1,36 @@
-import edhec from "../../assets/edhec.webp";
-import thi from "../../assets/thi.webp";
-import mannheim from "../../assets/uni_mannheim.webp";
-import type { InformationItemProps } from "../../types/InformationItemProps";
-import EducationSectionItem from "./EducationSectionItem";
+import edhec from '../../assets/edhec.webp';
+import thi from '../../assets/thi.webp';
+import mannheim from '../../assets/uni_mannheim.webp';
+import type { InformationItemProps } from '../../types/InformationItemProps';
+import EducationSectionItem from './EducationSectionItem';
 
 const education: InformationItemProps[] = [
   {
     image: mannheim,
-    uniName: "University of Mannheim",
-    text: "I earned my foundational education at the University of Mannheim, \
+    uniName: 'University of Mannheim',
+    text: 'I earned my foundational education at the University of Mannheim, \
     where I gained a strong grounding in economics and quantitative methods. \
      The university’s rigorous academic environment and diverse student \
      community helped me develop analytical thinking and problem-solving \
-     skills that are essential in today’s business world.",
+     skills that are essential in today’s business world.',
   },
   {
     image: edhec,
-    uniName: "EDHEC Business School",
-    text: "I further enhanced my international perspective at EDHEC \
+    uniName: 'EDHEC Business School',
+    text: 'I further enhanced my international perspective at EDHEC \
     Business School, known for its expertise in finance and global business. \
     Studying there allowed me to engage with a multicultural student body, \
     deepen my knowledge of international markets, and develop a strategic \
-    mindset for tackling complex business challenges.",
+    mindset for tackling complex business challenges.',
   },
   {
     image: thi,
-    uniName: "Technical University of Ingolstadt",
-    text: "I completed my bachelor’s degree in Economics at the Technical \
+    uniName: 'Technical University of Ingolstadt',
+    text: 'I completed my bachelor’s degree in Economics at the Technical \
     University of Ingolstadt, located in the heart of Bavaria. The university \
     is known for its strong focus on innovation, technology, and practical \
     learning, providing students with a dynamic environment that connects \
-    theory with real-world application.",
+    theory with real-world application.',
   },
 ];
 

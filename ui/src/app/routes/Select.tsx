@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function Select() {
   return (
@@ -17,7 +17,7 @@ export default function Select() {
       >
         <div className="flex justify-center gap-4">
           <Link
-            to={"/modify-post"}
+            to={'/modify-post'}
             className="
                 bg-white text-blue-700 font-semibold px-6 py-3 
                 rounded-lg shadow-md hover:bg-blue-50 transition
@@ -26,7 +26,7 @@ export default function Select() {
             Update/Delete Blog Post
           </Link>
           <Link
-            to={"/create-post"}
+            to={'/create-post'}
             className="
                 border border-white text-white font-semibold 
                 px-6 py-3 rounded-lg hover:bg-white/10 transition

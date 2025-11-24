@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import josephImg from "../../assets/joseph.webp";
+import { Link } from 'react-router-dom';
+import josephImg from '../../assets/joseph.webp';
 
 export default function LandingPageHero() {
   return (
@@ -35,7 +35,7 @@ export default function LandingPageHero() {
               Get to know me
             </a>
             <Link
-              to={"/blog"}
+              to={'/blog'}
               className="
                 border border-white text-white font-semibold 
                 px-6 py-3 rounded-lg hover:bg-white/10 transition

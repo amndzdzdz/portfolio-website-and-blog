@@ -1,4 +1,4 @@
-import type { InformationItemProps } from "../../types/InformationItemProps";
+import type { InformationItemProps } from '../../types/InformationItemProps';
 
 export default function EducationSectionItem(props: InformationItemProps) {
   return (
