@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import type { BlogPreviewProps } from "../../types/BlogPreviewProps";
+import { Link } from 'react-router-dom';
+import type { BlogPreviewProps } from '../../types/BlogPreviewProps';
 
 export default function BlogPreview({
   image,
@@ -45,7 +45,7 @@ export default function BlogPreview({
           </h1>
           <p className="text-gray-600 line-clamp-2 mb-5">{caption}</p>
           <Link
-            to={"/blogs/this-is-a-nice-post"}
+            to={'/blogs/this-is-a-nice-post'}
             id={id}
             className="
                 border border-blue-600 text-blue-600 font-semibold 

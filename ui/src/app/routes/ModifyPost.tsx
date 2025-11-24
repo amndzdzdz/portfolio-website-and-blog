@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import "suneditor/dist/css/suneditor.min.css";
-import SunEditor, { buttonList } from "suneditor-react";
+import { Link } from 'react-router-dom';
+import 'suneditor/dist/css/suneditor.min.css';
+import SunEditor, { buttonList } from 'suneditor-react';
 
 export default function ModifyPost() {
   return (
@@ -8,7 +8,7 @@ export default function ModifyPost() {
       <div className="flex justify-center flex-col p-20">
         <div className="ml-5 mt-5 mb-5">
           <Link
-            to={"/select"}
+            to={'/select'}
             className="
             bg-gray-300 text-black font-semibold px-6 py-3
             rounded-lg shadow-md hover:bg-gray-400 transition hover:cursor-pointer

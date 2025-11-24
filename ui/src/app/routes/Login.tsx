@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function Login() {
   const [isEmailEmpty, setIsEmailEmpty] = useState(true);
@@ -74,8 +74,8 @@ export default function Login() {
               hover:cursor-pointer
               ${
                 isPasswordEmpty || isEmailEmpty
-                  ? "disabled:cursor-not-allowed disabled:bg-gray-400"
-                  : ""
+                  ? 'disabled:cursor-not-allowed disabled:bg-gray-400'
+                  : ''
               }
             `}
             >

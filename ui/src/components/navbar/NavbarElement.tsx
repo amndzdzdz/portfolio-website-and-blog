@@ -1,5 +1,5 @@
-import type { NavbarElementProps } from "../../types/NavbarElementProps";
-import { Link } from "react-router-dom";
+import type { NavbarElementProps } from '../../types/NavbarElementProps';
+import { Link } from 'react-router-dom';
 
 export default function NavbarElement(navbarElement: NavbarElementProps) {
   return (

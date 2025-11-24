@@ -1,10 +1,10 @@
-import ContactForm from "../../components/contact/ContactForm";
-import type { CommentProps } from "../../types/CommentProps";
-import Comment from "./Comment";
+import ContactForm from '../../components/contact/ContactForm';
+import type { CommentProps } from '../../types/CommentProps';
+import Comment from './Comment';
 
 const formProps = {
-  title: "Write a comment!",
-  onSubmit: { this: "that" },
+  title: 'Write a comment!',
+  onSubmit: { this: 'that' },
 };
 
 export default function CommentSection({

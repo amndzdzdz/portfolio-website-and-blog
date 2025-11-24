@@ -1,9 +1,9 @@
-import ContactForm from "./ContactForm";
-import profile from "../../assets/joseph.webp";
+import ContactForm from './ContactForm';
+import profile from '../../assets/joseph.webp';
 
 const formProps = {
-  title: "Send me an email!",
-  onSubmit: { this: "that" },
+  title: 'Send me an email!',
+  onSubmit: { this: 'that' },
 };
 
 export default function Contact() {

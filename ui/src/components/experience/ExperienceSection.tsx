@@ -1,35 +1,35 @@
-import roedlAndPartner from "../../assets/roedl__partner_logo.webp";
-import vrBank from "../../assets/vrb.webp";
-import type { InformationItemProps } from "../../types/InformationItemProps";
-import ExperienceItem from "./ExperienceItem";
+import roedlAndPartner from '../../assets/roedl__partner_logo.webp';
+import vrBank from '../../assets/vrb.webp';
+import type { InformationItemProps } from '../../types/InformationItemProps';
+import ExperienceItem from './ExperienceItem';
 
 const education: InformationItemProps[] = [
   {
     image: roedlAndPartner,
-    uniName: "Internship - Audit",
-    text: "I earned my foundational education at the University of Mannheim, \
+    uniName: 'Internship - Audit',
+    text: 'I earned my foundational education at the University of Mannheim, \
     where I gained a strong grounding in economics and quantitative methods. \
      The university’s rigorous academic environment and diverse student \
      community helped me develop analytical thinking and problem-solving \
-     skills that are essential in today’s business world.",
+     skills that are essential in today’s business world.',
   },
   {
     image: vrBank,
-    uniName: "Working Student - Data Analyst",
-    text: "I further enhanced my international perspective at EDHEC \
+    uniName: 'Working Student - Data Analyst',
+    text: 'I further enhanced my international perspective at EDHEC \
     Business School, known for its expertise in finance and global business. \
     Studying there allowed me to engage with a multicultural student body, \
     deepen my knowledge of international markets, and develop a strategic \
-    mindset for tackling complex business challenges.",
+    mindset for tackling complex business challenges.',
   },
   {
     image: vrBank,
-    uniName: "Internship - Client Advisory",
-    text: "I completed my bachelor’s degree in Economics at the Technical \
+    uniName: 'Internship - Client Advisory',
+    text: 'I completed my bachelor’s degree in Economics at the Technical \
     University of Ingolstadt, located in the heart of Bavaria. The university \
     is known for its strong focus on innovation, technology, and practical \
     learning, providing students with a dynamic environment that connects \
-    theory with real-world application.",
+    theory with real-world application.',
   },
 ];
 

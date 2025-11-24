@@ -1,11 +1,11 @@
-import CommentSection from "../../components/comment/CommentSection";
+import CommentSection from '../../components/comment/CommentSection';
 
 const blogPost = {
-  id: "1",
-  title: "How to Build a React App From Scratch",
+  id: '1',
+  title: 'How to Build a React App From Scratch',
   image:
-    "https://hasthemes.com/blog/wp-content/uploads/2021/10/react-blog-templates.jpg",
-  timeToRead: "6 min",
+    'https://hasthemes.com/blog/wp-content/uploads/2021/10/react-blog-templates.jpg',
+  timeToRead: '6 min',
   content: `Building a React application from scratch might sound overwhelming, 
 but it's much easier than it seems once you understand the underlying 
 concepts. In this guide, we'll walk through setting up your environment, 
@@ -118,28 +118,28 @@ start building your own applications from scratch.
 `,
   comments: [
     {
-      id: "c1",
-      author: "Alice Johnson",
-      date: "2025-01-14",
-      text: "This is a great post! Really enjoyed the insights.",
+      id: 'c1',
+      author: 'Alice Johnson',
+      date: '2025-01-14',
+      text: 'This is a great post! Really enjoyed the insights.',
     },
     {
-      id: "c2",
-      author: "Michael Chen",
-      date: "2025-01-13",
-      text: "I think you could expand on the last section, but overall very helpful.",
+      id: 'c2',
+      author: 'Michael Chen',
+      date: '2025-01-13',
+      text: 'I think you could expand on the last section, but overall very helpful.',
     },
     {
-      id: "c3",
-      author: "Sara Khalid",
-      date: "2025-01-11",
-      text: "Thanks for sharing this. Looking forward to more content!",
+      id: 'c3',
+      author: 'Sara Khalid',
+      date: '2025-01-11',
+      text: 'Thanks for sharing this. Looking forward to more content!',
     },
     {
-      id: "c4",
-      author: "David P.",
-      date: "2025-01-10",
-      text: "Amazing write-up. Clear, concise, and informative.",
+      id: 'c4',
+      author: 'David P.',
+      date: '2025-01-10',
+      text: 'Amazing write-up. Clear, concise, and informative.',
     },
   ],
 };

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import type { FormProps } from "../../types/FormProps";
+import { useState } from 'react';
+import type { FormProps } from '../../types/FormProps';
 
 export default function ContactForm(formProps: FormProps) {
   const [isEmailEmpty, setIsEmailEmpty] = useState(true);
@@ -74,8 +74,8 @@ export default function ContactForm(formProps: FormProps) {
               hover:cursor-pointer
               ${
                 isInputEmpty || isEmailEmpty
-                  ? "disabled:cursor-not-allowed disabled:bg-gray-400"
-                  : ""
+                  ? 'disabled:cursor-not-allowed disabled:bg-gray-400'
+                  : ''
               }
             `}
           >
