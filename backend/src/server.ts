@@ -4,6 +4,7 @@ import path from 'path';
 import { connectDB } from './config/connectDB';
 import { errorHandler } from './middleware/errorHandler';
 import blogPostRoutes from './routes/blogPostRoutes.ts';
+import cors from 'cors';
 
 const app = express();
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
@@ -11,6 +12,14 @@ const PORT = process.env.PORT;
 
 connectDB();
 
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: false,
+  }),
+);
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/blogs/', blogPostRoutes);
 app.use(errorHandler);
