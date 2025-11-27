@@ -1,8 +1,29 @@
 import { Link } from 'react-router-dom';
 import 'suneditor/dist/css/suneditor.min.css';
 import SunEditor, { buttonList } from 'suneditor-react';
+import { fetchBlogPostTitles } from '../api/blogPostApi';
+import { useEffect, useState } from 'react';
 
 export default function ModifyPost() {
+  const [blogPosts, setBlogPosts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [currentPost, setCurrentPost] = useState('');
+
+  useEffect(() => {
+    async function loadBlogPosts() {
+      try {
+        const blogPosts = await fetchBlogPostTitles();
+        console.log(blogPosts['blogPostTitles']);
+        setBlogPosts(blogPosts['blogPostTitles']);
+      } catch (err) {
+        console.log('An error occured: ' + err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadBlogPosts();
+  }, []);
+
   return (
     <section className="bg-gray-50 min-h-screen">
       <div className="flex justify-center flex-col p-20">
@@ -27,10 +48,21 @@ export default function ModifyPost() {
               focus:border-brand block w-full px-2.5 py-2 shadow-xs 
               placeholder:text-body
               "
+              onChange={(e) => {
+                console.log(e.target.value);
+                setCurrentPost(e.target.value);
+              }}
             >
-              <option>Placeholder 1</option>
-              <option>Placeholder 2</option>
-              <option>Placeholder 3</option>
+              {loading && <option>Blogposts loading</option>}
+              {!loading && blogPosts.length == 0 && (
+                <option>No blog posts</option>
+              )}
+              {!loading &&
+                blogPosts.map((post) => (
+                  <option key={post._id} value={post._id}>
+                    {post.title}
+                  </option>
+                ))}
             </select>
           </div>
           <div className="flex flex-col m-5">
