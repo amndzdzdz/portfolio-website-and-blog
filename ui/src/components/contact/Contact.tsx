@@ -3,7 +3,6 @@ import profile from '../../assets/joseph.webp';
 
 const formProps = {
   title: 'Send me an email!',
-  onSubmit: { this: 'that' },
 };
 
 export default function Contact() {
