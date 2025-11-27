@@ -11,3 +11,11 @@ export async function createBlogPost(data: BlogPost) {
 
   return res;
 }
+
+export async function fetchBlogPostTitles() {
+  const blogPosts = await fetch('http://localhost:8080/blogs/titles/', {
+    method: 'GET',
+  });
+
+  return blogPosts.json();
+}
