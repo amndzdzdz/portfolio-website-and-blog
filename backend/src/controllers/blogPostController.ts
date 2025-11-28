@@ -126,19 +126,20 @@ export const getBlogPostPreviews = asyncHandler(
   async (req: Request, res: Response) => {
     let furthestDate;
     const limit = req.query.limit;
-    const after = req.query.after;
+    const after = new Date(req.query.after as string);
     if (!limit || !after) {
       res.status(400);
       throw new Error('Both query params limit and after required!');
     }
-    const blogPosts = await BlogPost.find({ date: { $gt: after } })
+    const blogPosts = await BlogPost.find({ date: { $lt: after } })
+      .sort({ date: -1 })
       .limit(Number(limit))
       .select('_id title caption category date image')
       .exec();
     if (blogPosts.length === 0) {
       furthestDate = after;
     } else {
-      furthestDate = blogPosts[blogPosts.length - 1]!.date;
+      furthestDate = blogPosts[blogPosts.length - 1]!.date.toISOString();
     }
     res.status(200).json({
       blogPosts: blogPosts,
