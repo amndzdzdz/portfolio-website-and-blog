@@ -6,13 +6,13 @@ export default function BlogPreview({
   title,
   caption,
   category,
-  id,
+  _id,
 }: BlogPreviewProps) {
   return (
     <div id="content" className="flex flex-col items-center">
       <div
         className="
-            bg-white w-9/10 md:w-2/3 min-h-70 max-h-70 shadow-lg mt-10 
+            bg-white w-9/10 md:w-2/3 min-h-70 max-h-70 shadow-lg mt-5 mb-5
             rounded-xl flex flex-col md:flex-row"
       >
         <div
@@ -45,8 +45,8 @@ export default function BlogPreview({
           </h1>
           <p className="text-gray-600 line-clamp-2 mb-5">{caption}</p>
           <Link
-            to={'/blogs/this-is-a-nice-post'}
-            id={id}
+            to={`/blogs/${_id}`}
+            id={_id}
             className="
                 border border-blue-600 text-blue-600 font-semibold 
                 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white 

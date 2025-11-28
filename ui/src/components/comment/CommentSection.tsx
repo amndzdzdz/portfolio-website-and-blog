@@ -35,7 +35,7 @@ export default function CommentSection({
             Tell me your opinion in the comments!
           </h1>
           {comments.map((comment) => {
-            return <Comment {...comment}></Comment>;
+            return <Comment key={comment.id} {...comment}></Comment>;
           })}
         </div>
         <ContactForm {...formProps}></ContactForm>
