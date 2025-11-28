@@ -8,14 +8,25 @@ export async function createBlogPost(data: BlogPost) {
     },
     body: JSON.stringify(data),
   });
-
   return res;
 }
 
-export async function fetchBlogPostTitles() {
+export async function getBlogPostTitles() {
   const blogPosts = await fetch('http://localhost:8080/blogs/titles/', {
     method: 'GET',
   });
+  return blogPosts.json();
+}
 
+export async function getBlogPostPreviews(limit: number, after?: string) {
+  const blogPosts = await fetch(
+    `http://localhost:8080/blogs/?after=${after}&limit=${limit}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  );
   return blogPosts.json();
 }

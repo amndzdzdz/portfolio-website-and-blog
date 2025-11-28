@@ -3,5 +3,5 @@ export type BlogPreviewProps = {
   title: string;
   caption: string;
   category: string;
-  id: string;
+  _id: string;
 };
