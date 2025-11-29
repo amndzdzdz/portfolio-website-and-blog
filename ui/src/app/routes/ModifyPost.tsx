@@ -1,19 +1,35 @@
 import { Link } from 'react-router-dom';
 import 'suneditor/dist/css/suneditor.min.css';
 import SunEditor, { buttonList } from 'suneditor-react';
-import { fetchBlogPostTitles } from '../api/blogPostApi';
+import {
+  deleteBlogPost,
+  getBlogPostById,
+  getBlogPostTitles,
+  updateBlogPost,
+} from '../api/blogPostApi';
 import { useEffect, useState } from 'react';
 
 export default function ModifyPost() {
   const [blogPosts, setBlogPosts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentPost, setCurrentPost] = useState('');
+  const [title, setTitle] = useState<string | undefined>(undefined);
+  const [date, setDate] = useState<string | undefined>(undefined);
+  const [caption, setCaption] = useState<string | undefined>(undefined);
+  const [timeToRead, setTimeToRead] = useState<string | undefined>(undefined);
+  const [image, setImage] = useState<string | undefined>(undefined);
+  const [category, setCategory] = useState<string | undefined>(undefined);
+  const [content, setContent] = useState<string | undefined>(undefined);
+  const [action, setAction] = useState<'update' | 'delete' | undefined>(
+    undefined,
+  );
+  const [currentPostId, setCurrentPostId] = useState<string | undefined>(
+    undefined,
+  );
 
   useEffect(() => {
     async function loadBlogPosts() {
       try {
-        const blogPosts = await fetchBlogPostTitles();
-        console.log(blogPosts['blogPostTitles']);
+        const blogPosts = await getBlogPostTitles();
         setBlogPosts(blogPosts['blogPostTitles']);
       } catch (err) {
         console.log('An error occured: ' + err);
@@ -23,6 +39,50 @@ export default function ModifyPost() {
     }
     loadBlogPosts();
   }, []);
+
+  async function loadBlogPost(id: string) {
+    try {
+      const blogPost = await getBlogPostById(id!);
+      setTitle(blogPost['blogPost'].title);
+      setCaption(blogPost['blogPost'].caption);
+      setTimeToRead(blogPost['blogPost'].timeToRead);
+      setImage(blogPost['blogPost'].image);
+      setCategory(blogPost['blogPost'].category);
+      setContent(blogPost['blogPost'].content);
+      setDate(blogPost['blogPost'].date);
+    } catch (err) {
+      console.log('An error occured: ' + err);
+    }
+  }
+
+  async function handleOnSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (action === 'update') {
+      try {
+        const data = {
+          id: currentPostId!,
+          title: title!,
+          caption: caption!,
+          timeToRead: timeToRead!,
+          image: image!,
+          date: date!,
+          category: category!,
+          content: content!,
+        };
+        await updateBlogPost(data);
+      } catch (err) {
+        console.log('An error occured: ' + err);
+      }
+    }
+    if (action === 'delete') {
+      try {
+        await deleteBlogPost(currentPostId!);
+      } catch (err) {
+        console.log('An error occured: ' + err);
+      }
+    }
+    window.location.reload();
+  }
 
   return (
     <section className="bg-gray-50 min-h-screen">
@@ -38,7 +98,7 @@ export default function ModifyPost() {
             Go back
           </Link>
         </div>
-        <form>
+        <form onSubmit={handleOnSubmit}>
           <div className="flex flex-col m-5">
             <label>Select which post to change/delete</label>
             <select
@@ -49,10 +109,16 @@ export default function ModifyPost() {
               placeholder:text-body
               "
               onChange={(e) => {
-                console.log(e.target.value);
-                setCurrentPost(e.target.value);
+                const id = e.target.value;
+                if (id !== 'Select blogpost') {
+                  setCurrentPostId(id);
+                  loadBlogPost(id);
+                } else {
+                  setCurrentPostId(undefined);
+                }
               }}
             >
+              <option key="-1">Select blogpost</option>
               {loading && <option>Blogposts loading</option>}
               {!loading && blogPosts.length == 0 && (
                 <option>No blog posts</option>
@@ -76,6 +142,10 @@ export default function ModifyPost() {
               placeholder:text-body
               "
               placeholder="Load blog title..."
+              value={currentPostId ? (title ?? '') : ''}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
             ></input>
           </div>
 
@@ -91,6 +161,10 @@ export default function ModifyPost() {
               "
               type="number"
               placeholder="Load time to read..."
+              value={currentPostId ? (timeToRead ?? '') : ''}
+              onChange={(e) => {
+                setTimeToRead(e.target.value);
+              }}
             ></input>
           </div>
 
@@ -104,8 +178,12 @@ export default function ModifyPost() {
               focus:border-brand block w-full px-2.5 py-2 shadow-xs 
               placeholder:text-body
               "
-              type="number"
-              placeholder="Load blog title..."
+              type="text"
+              placeholder="Load blog image..."
+              value={currentPostId ? (image ?? '') : ''}
+              onChange={(e) => {
+                setImage(e.target.value);
+              }}
             ></input>
           </div>
 
@@ -120,6 +198,10 @@ export default function ModifyPost() {
               placeholder:text-body
               "
               placeholder="Load blog caption..."
+              value={currentPostId ? (caption ?? '') : ''}
+              onChange={(e) => {
+                setCaption(e.target.value);
+              }}
             ></input>
           </div>
 
@@ -134,6 +216,10 @@ export default function ModifyPost() {
               placeholder:text-body
               "
               placeholder="Load blog category..."
+              value={currentPostId ? (category ?? '') : ''}
+              onChange={(e) => {
+                setCategory(e.target.value);
+              }}
             ></input>
           </div>
 
@@ -143,41 +229,45 @@ export default function ModifyPost() {
               setOptions={{
                 buttonList: buttonList.complex,
               }}
+              setContents={currentPostId ? (content ?? '') : ''}
+              onChange={(e) => {
+                setContent(e);
+              }}
             ></SunEditor>
           </div>
-
-          <div className="flex flex-col m-5">
-            <label>Comments</label>
-            <input
-              required
+          <div className="flex flex-row m-5">
+            <button
+              disabled={currentPostId ? false : true}
+              name="delete-button"
               className="
-              bg-neutral-secondary-medium border border-default-medium 
-              text-heading text-sm rounded-base focus:ring-brand 
-              focus:border-brand block w-full px-2.5 py-2 shadow-xs 
-              placeholder:text-body
-              "
-              placeholder="Load blog comments..."
-            ></input>
+            bg-red-500 text-white font-semibold px-6 py-3 mr-5
+            rounded-lg shadow-md hover:bg-red-600 transition 
+            hover:cursor-pointer disabled:bg-gray-400 
+            disabled:cursor-not-allowed
+            "
+              onClick={(e) => {
+                setAction('delete');
+              }}
+            >
+              Delete blog post
+            </button>
+            <button
+              disabled={currentPostId ? false : true}
+              name="update-button"
+              className="
+            bg-blue-500 text-white font-semibold px-6 py-3 
+            rounded-lg shadow-md hover:bg-blue-600 transition 
+            hover:cursor-pointer disabled:bg-gray-400 
+            disabled:cursor-not-allowed
+            "
+              onClick={(e) => {
+                setAction('update');
+              }}
+            >
+              Update blog post
+            </button>
           </div>
         </form>
-        <div className="flex flex-row m-5">
-          <button
-            className="
-            bg-red-500 text-white font-semibold px-6 py-3 mr-5
-            rounded-lg shadow-md hover:bg-red-600 transition hover:cursor-pointer
-                      "
-          >
-            Delete blog post
-          </button>
-          <button
-            className="
-            bg-blue-500 text-white font-semibold px-6 py-3 
-            rounded-lg shadow-md hover:bg-blue-600 transition hover:cursor-pointer
-                      "
-          >
-            Update blog post
-          </button>
-        </div>
       </div>
     </section>
   );
