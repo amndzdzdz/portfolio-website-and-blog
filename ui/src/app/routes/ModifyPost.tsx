@@ -245,7 +245,7 @@ export default function ModifyPost() {
             hover:cursor-pointer disabled:bg-gray-400 
             disabled:cursor-not-allowed
             "
-              onClick={(e) => {
+              onClick={() => {
                 setAction('delete');
               }}
             >
@@ -260,7 +260,7 @@ export default function ModifyPost() {
             hover:cursor-pointer disabled:bg-gray-400 
             disabled:cursor-not-allowed
             "
-              onClick={(e) => {
+              onClick={() => {
                 setAction('update');
               }}
             >
