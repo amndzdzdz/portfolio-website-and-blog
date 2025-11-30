@@ -4,6 +4,7 @@ import path from 'path';
 import { connectDB } from './config/connectDB';
 import { errorHandler } from './middleware/errorHandler';
 import blogPostRoutes from './routes/blogPostRoutes.ts';
+import commentsRoutes from './routes/commentRoutes.ts';
 import cors from 'cors';
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/blogs/', blogPostRoutes);
+app.use('/comments/', commentsRoutes);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
