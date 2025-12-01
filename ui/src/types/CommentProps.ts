@@ -1,6 +1,6 @@
 export type CommentProps = {
-  id: string;
-  author: string;
-  text: string;
+  blogPostId: string;
+  name: string;
+  message: string;
   date: string;
 };
