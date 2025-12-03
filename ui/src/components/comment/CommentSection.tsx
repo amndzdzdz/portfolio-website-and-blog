@@ -1,11 +1,6 @@
-import ContactForm from '../../components/contact/ContactForm';
 import type { CommentProps } from '../../types/CommentProps';
 import Comment from './Comment';
-
-const formProps = {
-  title: 'Write a comment!',
-  onSubmit: { this: 'that' },
-};
+import CommentForm from './CommentForm';
 
 export default function CommentSection({
   comments,
@@ -34,11 +29,17 @@ export default function CommentSection({
           <h1 className="text-black text-2xl font-extrabold">
             Tell me your opinion in the comments!
           </h1>
-          {comments.map((comment) => {
-            return <Comment key={comment.id} {...comment}></Comment>;
-          })}
+          {comments &&
+            comments.map((comment) => {
+              return (
+                <Comment
+                  key={comment.blogPostId + comment.date}
+                  {...comment}
+                ></Comment>
+              );
+            })}{' '}
         </div>
-        <ContactForm {...formProps}></ContactForm>
+        <CommentForm></CommentForm>
       </div>
     </section>
   );
