@@ -92,8 +92,9 @@ export default function ModifyPost() {
             to={'/select'}
             className="
             bg-gray-300 text-black font-semibold px-6 py-3
-            rounded-lg shadow-md hover:bg-gray-400 transition hover:cursor-pointer
-                      "
+            rounded-lg shadow-md hover:bg-gray-400 
+            transition hover:cursor-pointer
+            "
           >
             Go back
           </Link>
