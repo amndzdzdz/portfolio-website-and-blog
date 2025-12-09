@@ -4,6 +4,6 @@ COPY . /app/
 
 WORKDIR /app
 
-RUN npm install
+RUN npm install --force --loglevel verbose
 
 CMD ["npm", "run", "dev"]
