@@ -8,4 +8,8 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react-infinite-scroll-component'],
   },
+  server: {
+    host: true,
+    port: 5173,
+  },
 });
