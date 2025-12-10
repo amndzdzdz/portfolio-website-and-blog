@@ -6,6 +6,7 @@ import { errorHandler } from './middleware/errorHandler';
 import blogPostRoutes from './routes/blogPostRoutes.ts';
 import commentsRoutes from './routes/commentRoutes.ts';
 import cors from 'cors';
+import userRoutes from './routes/userRoutes.ts';
 
 const app = express();
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/blogs/', blogPostRoutes);
 app.use('/comments/', commentsRoutes);
+app.use('/login/', userRoutes);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
