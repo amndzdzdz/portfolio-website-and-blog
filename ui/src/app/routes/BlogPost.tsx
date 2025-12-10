@@ -54,7 +54,7 @@ export default function BlogPost() {
               <div className="flex items-center text-gray-600 space-x-2 mb-10">
                 <span>Joseph Dziri</span>
                 <span>•</span>
-                <span>{blogPost!.timeToRead}</span>
+                <span>{blogPost!.timeToRead} min</span>
                 <span>•</span>
                 <span>17.11.2025</span>
               </div>
