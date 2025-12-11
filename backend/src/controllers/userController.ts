@@ -14,16 +14,19 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
     throw new Error('Email and password is required!');
   }
   if (email === process.env.email && password === process.env.password) {
-    jwt.sign({ body }, key!, { expiresIn: '2h' }, (err, token) => {
+    jwt.sign({ body }, key!, { expiresIn: '1d' }, (err, token) => {
       if (err) {
         console.log(err);
       }
-      res.status(200).cookie('token', token, {
-        httpOnly: true,
-        secure: true,
-        sameSite: 'strict',
-        maxAge: 1000 * 60 * 60 * 24,
-      });
+      res
+        .status(200)
+        .cookie('token', token, {
+          httpOnly: true,
+          sameSite: 'lax',
+          secure: false,
+          maxAge: 1000 * 60 * 60 * 24,
+        })
+        .json({ response: 'Logged in Successfully!' });
     });
   } else {
     res.status(400);
