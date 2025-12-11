@@ -2,6 +2,9 @@ import { Request, Response } from 'express';
 import asyncHandler from 'express-async-handler';
 import jwt from 'jsonwebtoken';
 
+//@desc Post login data and get JWT back
+//@route POST /login/
+//@access public
 export const login = asyncHandler(async (req: Request, res: Response) => {
   const body = req.body;
   const key = process.env.jwtKey;
@@ -15,7 +18,12 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
       if (err) {
         console.log(err);
       }
-      res.status(200).send(token);
+      res.status(200).cookie('token', token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'strict',
+        maxAge: 1000 * 60 * 60 * 24,
+      });
     });
   } else {
     res.status(400);
