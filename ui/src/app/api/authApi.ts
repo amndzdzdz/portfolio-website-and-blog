@@ -9,3 +9,14 @@ export async function login(email: string, password: string) {
   });
   return response;
 }
+
+export async function checkAuthentication() {
+  const response = await fetch('http://localhost:8080/login/', {
+    method: 'GET',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  return response;
+}
