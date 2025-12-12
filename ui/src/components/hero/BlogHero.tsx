@@ -12,7 +12,7 @@ export default function BlogHero() {
       <div
         className="
           max-w-7xl mx-auto w-full px-6 flex 
-          flex-col-reverse md:flex-row items-center gap-6
+          flex-col md:flex-row items-center gap-6
           "
       >
         <div className="w-full md:w-1/2 flex justify-center">
