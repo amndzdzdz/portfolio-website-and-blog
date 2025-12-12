@@ -33,3 +33,10 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
     throw new Error('Login data is wrong');
   }
 });
+
+//@desc Get random data back to test auth
+//@route GET /login/
+//@access private
+export const checkAuth = asyncHandler(async (req: Request, res: Response) => {
+  res.status(200).json({ response: 'Authenticated!' });
+});
