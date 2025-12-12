@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SunEditor from 'suneditor-react';
 import { buttonList } from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 import { createBlogPost } from '../api/blogPostApi';
+import { checkAuthentication } from '../api/authApi';
 
 export default function CreatePost() {
   const [title, setTitle] = useState('');
@@ -12,6 +13,16 @@ export default function CreatePost() {
   const [caption, setCaption] = useState('');
   const [category, setCategory] = useState('');
   const [content, setContent] = useState('');
+
+  useEffect(() => {
+    async function checkAuth() {
+      const response = await checkAuthentication();
+      if (!response.ok) {
+        window.location.href = '/select';
+      }
+    }
+    checkAuth();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +40,8 @@ export default function CreatePost() {
       await createBlogPost(formData);
     } catch {
       console.log('Failed creating the blogpost');
+    } finally {
+      window.location.href = '/login';
     }
     window.location.reload();
   };

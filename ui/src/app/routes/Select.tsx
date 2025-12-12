@@ -1,6 +1,18 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getBlogPostTitles } from '../api/blogPostApi';
 
 export default function Select() {
+  useEffect(() => {
+    async function loadBlogPosts() {
+      const response = await getBlogPostTitles();
+      if (!response) {
+        window.location.href = '/login';
+      }
+    }
+    loadBlogPosts();
+  }, []);
+
   return (
     <section
       id="hero-section"

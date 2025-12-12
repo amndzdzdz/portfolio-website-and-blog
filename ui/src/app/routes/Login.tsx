@@ -1,13 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { checkAuthentication, login } from '../api/authApi';
 
 export default function Login() {
-  const [isEmailEmpty, setIsEmailEmpty] = useState(true);
-  const [isPasswordEmpty, setisPasswordEmpty] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    async function checkAuth() {
+      const response = await checkAuthentication();
+      if (response.ok) {
+        window.location.href = '/select';
+      }
+    }
+    checkAuth();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const response = await login(email, password);
+    if (response.ok) {
+      window.location.href = '/select';
+    } else {
+      window.location.reload();
+    }
+  };
 
   return (
     <section className="min-h-screen bg-linear-to-r from-blue-600 to-indigo-700">
       <div className="flex min-h-screen justify-center items-center">
         <form
+          onSubmit={handleSubmit}
           className="
            bg-white text-black shadow-lg 
            md:w-1/4 md:h-100 rounded-lg px-6 py-8 mb-4
@@ -25,11 +47,7 @@ export default function Login() {
               id="email"
               type="email"
               onChange={(e) => {
-                if (e.target.value.length > 0) {
-                  setIsEmailEmpty(false);
-                } else {
-                  setIsEmailEmpty(true);
-                }
+                setEmail(e.target.value);
               }}
               placeholder="email"
               className="
@@ -50,11 +68,7 @@ export default function Login() {
               id="password"
               type="password"
               onChange={(e) => {
-                if (e.target.value.length > 0) {
-                  setisPasswordEmpty(false);
-                } else {
-                  setisPasswordEmpty(true);
-                }
+                setPassword(e.target.value);
               }}
               placeholder="email"
               className="
@@ -67,13 +81,13 @@ export default function Login() {
           <div className="flex justify-center gap-4">
             <button
               type="submit"
-              disabled={isEmailEmpty || isPasswordEmpty}
+              disabled={email.length === 0 || password.length === 0}
               className={`
               bg-blue-500 hover:bg-blue-600 text-white 
               font-bold py-2 px-4 rounded md:mt-10
               hover:cursor-pointer
               ${
-                isPasswordEmpty || isEmailEmpty
+                password.length === 0 || email.length === 0
                   ? 'disabled:cursor-not-allowed disabled:bg-gray-400'
                   : ''
               }

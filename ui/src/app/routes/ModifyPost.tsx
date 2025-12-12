@@ -31,6 +31,9 @@ export default function ModifyPost() {
       try {
         const blogPosts = await getBlogPostTitles();
         setBlogPosts(blogPosts['blogPostTitles']);
+        if (!blogPosts) {
+          window.location.href = '/login';
+        }
       } catch (err) {
         console.log('An error occured: ' + err);
       } finally {
