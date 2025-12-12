@@ -16,7 +16,7 @@ export default function Contact() {
     >
       <div
         className="
-            max-w-7xl mx-auto px-6 py-12 flex flex-col-reverse 
+            max-w-7xl mx-auto px-6 py-12 flex flex-col 
             md:flex-row items-center justify-center gap-12 w-full
       "
       >
