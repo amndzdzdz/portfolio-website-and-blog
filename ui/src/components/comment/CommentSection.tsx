@@ -18,12 +18,12 @@ export default function CommentSection({
       <div
         className="
             max-w-7xl mx-auto px-6 py-12 flex flex-col-reverse 
-            md:flex-row items-center justify-center gap-12 w-full
+            lg:flex-row justify-center gap-12 w-full
       "
       >
         <div
-          className=" bg-white min-h-screen p-10 md:p-20 rounded-2xl
-            w-full md:w-1/2 text-center justify-center md:text-left
+          className=" bg-white min-h-screen p-10 lg:p-20 rounded-2xl
+            w-full lg:w-1/2 text-center justify-center lg:text-left
         "
         >
           <h1 className="text-black text-2xl font-extrabold">
