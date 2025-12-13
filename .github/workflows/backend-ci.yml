@@ -42,3 +42,9 @@ jobs:
         run: |
           npm run format:check --write
           npx prettier --write .
+
+      - name: Set up docker buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: docker build -t backend:ci
