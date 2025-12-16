@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  backend:
+    container_name: backend-c
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend:/app
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    container_name: frontend-c
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    env_file:
+      - ./ui/.env
+    ports:
+      - 5173:5173
+    volumes:
+      - ./ui:/app
+    depends_on:
+      - backend
+
+  database:
+    container_name: database-c
+    image: mongo:8.2.2
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+
+volumes:
+  mongodb_data:
