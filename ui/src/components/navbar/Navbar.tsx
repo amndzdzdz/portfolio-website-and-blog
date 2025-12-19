@@ -23,18 +23,30 @@ export default function Navbar() {
       >
         <div className="hidden md:flex pl-4">
           <NavbarElement
-            {...{ text: 'Joseph Dziri', to: '/#hero-section' }}
+            {...{
+              text: 'Joseph Dziri',
+              to: '/#hero-section',
+              section: 'hero-section',
+            }}
           ></NavbarElement>
         </div>
         <div className="flex justify-evenly items-center">
           <NavbarElement
-            {...{ text: 'About', to: '/#about-section' }}
+            {...{
+              text: 'About',
+              to: '/#about-section',
+              section: 'about-section',
+            }}
           ></NavbarElement>
           <NavbarElement
-            {...{ text: 'Contact', to: '/#contact-section' }}
+            {...{
+              text: 'Contact',
+              to: '/#contact-section',
+              section: 'contact-section',
+            }}
           ></NavbarElement>
           <NavbarElement
-            {...{ text: 'Blog', to: '/blog#blog-hero' }}
+            {...{ text: 'Blog', to: '/blog#blog-hero', section: 'blog' }}
           ></NavbarElement>
         </div>
       </div>
