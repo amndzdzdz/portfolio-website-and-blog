@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import josephImg from '../../assets/joseph.webp';
 
 export default function LandingPageHero() {
+  const handleClick = () => {
+    const el = document.getElementById('about-section');
+    el?.scrollIntoView({ behavior: 'smooth' });
+    window.history.pushState(null, '', '#about-section');
+  };
   return (
     <section
       id="hero-section"
@@ -25,15 +30,16 @@ export default function LandingPageHero() {
             experience. Check out my blog too!
           </p>
           <div className="flex justify-center md:justify-start gap-4">
-            <a
-              href="#about-section"
+            <Link
+              to="#about-section"
+              onClick={handleClick}
               className="
                 bg-white text-blue-700 font-semibold px-6 py-3 
                 rounded-lg shadow-md hover:bg-blue-50 transition
               "
             >
               Get to know me
-            </a>
+            </Link>
             <Link
               to={'/blog'}
               className="
