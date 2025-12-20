@@ -1,14 +1,13 @@
-import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import Navbar from './Navbar';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import LandingPage from '../../app/routes/LandingPage';
 import Blog from '../../app/routes/Blog';
+import Navbar from '../../components/navbar/Navbar';
 
-describe('Navbar', () => {
+describe('Landing-page', () => {
   beforeEach(() => {
     Element.prototype.scrollIntoView = vi.fn();
   });
@@ -17,6 +16,7 @@ describe('Navbar', () => {
     render(
       <MemoryRouter>
         <Navbar></Navbar>
+        <LandingPage></LandingPage>
       </MemoryRouter>,
     );
     expect(
