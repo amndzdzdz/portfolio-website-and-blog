@@ -46,7 +46,7 @@ export default function Navbar() {
             }}
           ></NavbarElement>
           <NavbarElement
-            {...{ text: 'Blog', to: '/blog#blog-hero', section: 'blog' }}
+            {...{ text: 'Blog', to: '/blog', section: 'blog' }}
           ></NavbarElement>
         </div>
       </div>
