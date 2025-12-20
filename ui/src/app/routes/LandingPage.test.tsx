@@ -91,10 +91,23 @@ describe('Landing-page', () => {
     );
     const heroLink = screen
       .getAllByRole('link', { name: 'Blog' })
-      .find((link) => link.getAttribute('href') === '/blog#blog-hero');
+      .find((link) => link.getAttribute('href') === '/blog');
     expect(heroLink).toBeDefined();
+    expect(heroLink).toHaveAttribute('href', '/blog');
     await userEvent.click(heroLink!);
-    expect(window.location.pathname).toBe('/blog');
-    expect(window.location.hash).toBe('#blog-hero');
+  });
+
+  it('Brings the user to the about section', async () => {
+    render(
+      <MemoryRouter>
+        <LandingPage></LandingPage>
+      </MemoryRouter>,
+    );
+    const button = screen
+      .getAllByRole('link', { name: 'Get to know me' })
+      .find((link) => link.getAttribute('href') === '/#about-section');
+    expect(button).toBeDefined();
+    await userEvent.click(button!);
+    expect(Element.prototype.scrollIntoView).toHaveBeenCalled();
   });
 });
