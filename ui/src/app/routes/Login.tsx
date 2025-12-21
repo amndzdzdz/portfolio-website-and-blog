@@ -49,7 +49,7 @@ export default function Login() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
-              placeholder="email"
+              placeholder="Email"
               className="
               shadow appearance-none border rounded w-full 
               py-2 px-3 text-gray-700 leading-tight focus:outline-none 
@@ -70,7 +70,7 @@ export default function Login() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-              placeholder="email"
+              placeholder="Email"
               className="
               shadow appearance-none border rounded w-full 
               py-2 px-3 text-gray-700 leading-tight focus:outline-none 

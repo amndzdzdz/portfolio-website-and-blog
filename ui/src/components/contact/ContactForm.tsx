@@ -59,7 +59,7 @@ export default function ContactForm(formProps: FormProps) {
             name="email"
             type="email"
             onChange={(e) => setIsEmailEmpty(e.target.value.length === 0)}
-            placeholder="email"
+            placeholder="Email"
             className="
               shadow appearance-none border rounded w-full 
               py-2 px-3 text-gray-700 leading-tight focus:outline-none 
