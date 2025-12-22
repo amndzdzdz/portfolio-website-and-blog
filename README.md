@@ -1,12 +1,7 @@
-# Portfolio Website for my Brother + Blog
+# Portfolio Website Template + Blog
 
-- Todos:
+![CI](https://github.com/amndzdzdz/portfolio-website-and-blog/actions/workflows/frontend-ci.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![npm](https://img.shields.io/npm/v/my-package.svg)
 
-[] BlogPost routes
-[] Comments routes
-[] user routes
-[] RateLimitHandler
-[] Email, password, username
-[] Cookie session handler
-[] 2 Factor auth
-[] Forget password
+## remove mail link
