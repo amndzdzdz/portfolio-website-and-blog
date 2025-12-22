@@ -4,7 +4,7 @@
   "description": "Backend of the portfolio website",
   "main": "src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
     "start": "node src/server.ts",
     "dev": "nodemon src/server.ts",
     "lint": "eslint .",
@@ -32,12 +32,17 @@
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.9.1",
+    "@types/supertest": "^6.0.3",
+    "@vitest/ui": "^4.0.16",
     "eslint": "^9.39.1",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.5.0",
+    "mongodb-memory-server": "^11.0.0",
     "prettier": "^3.6.2",
+    "supertest": "^7.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.47.0"
+    "typescript-eslint": "^8.47.0",
+    "vitest": "^4.0.16"
   }
 }
