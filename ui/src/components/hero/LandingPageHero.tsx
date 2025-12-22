@@ -42,6 +42,7 @@ export default function LandingPageHero() {
             </Link>
             <Link
               to={'/blog'}
+              onClick={() => window.scrollTo(0, 0)}
               className="
                 border border-white text-white font-semibold 
                 px-6 py-3 rounded-lg hover:bg-white/10 transition
