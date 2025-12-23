@@ -6,7 +6,7 @@ export const validateTokenHandler = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     const token = req.cookies.token;
     if (!token) {
-      res.status(400);
+      res.status(401);
       throw new Error('No token in request!');
     }
     jwt.verify(
@@ -15,7 +15,7 @@ export const validateTokenHandler = asyncHandler(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       (err: VerifyErrors | null, _decoded: object | string | undefined) => {
         if (err) {
-          res.status(400).json({
+          res.status(401).json({
             title: 'Authentication failed',
             error: 'err',
           });
