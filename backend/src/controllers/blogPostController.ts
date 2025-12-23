@@ -19,7 +19,7 @@ export const createBlogPost = asyncHandler(
       !content
     ) {
       res.status(400);
-      throw new Error('All fields to createa  blog-post are required!');
+      throw new Error('All fields to create a blog-post are required!');
     }
     const createdBlogPost = await BlogPost.create({
       title: title,
@@ -82,6 +82,7 @@ export const updateBlogPost = asyncHandler(
     const updatedBlogPost = await BlogPost.findOneAndUpdate(
       { _id: id },
       {
+        _id: id,
         title: title,
         caption: caption,
         category: category,
@@ -90,10 +91,11 @@ export const updateBlogPost = asyncHandler(
         image: image,
         content: content,
       },
+      { new: true },
     );
     if (!updatedBlogPost) {
       res.status(404);
-      throw new Error("Couldn't find the blog-post");
+      throw new Error("Couldn't find the blog post");
     }
     res.status(200).json({ blogPost: updatedBlogPost });
   },
@@ -127,7 +129,7 @@ export const getBlogPostPreviews = asyncHandler(
     let furthestDate;
     const limit = req.query.limit;
     const after = new Date(req.query.after as string);
-    if (!limit || !after) {
+    if (!limit || isNaN(after.getTime())) {
       res.status(400);
       throw new Error('Both query params limit and after required!');
     }
@@ -141,10 +143,17 @@ export const getBlogPostPreviews = asyncHandler(
     } else {
       furthestDate = blogPosts[blogPosts.length - 1]!.date.toISOString();
     }
-    res.status(200).json({
-      blogPosts: blogPosts,
-      furthestDate: furthestDate,
-    });
+    if (limit === '0') {
+      res.status(200).json({
+        blogPosts: [],
+        furthestDate: after.toISOString(),
+      });
+    } else {
+      res.status(200).json({
+        blogPosts: blogPosts,
+        furthestDate: furthestDate,
+      });
+    }
   },
 );
 
