@@ -1,0 +1,26 @@
+import express from 'express';
+import { errorHandler } from './middleware/errorHandler';
+import blogPostRoutes from './routes/blogPostRoutes.ts';
+import commentsRoutes from './routes/commentRoutes.ts';
+import cors from 'cors';
+import userRoutes from './routes/userRoutes.ts';
+import cookieParser from 'cookie-parser';
+
+const app = express();
+
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  }),
+);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+app.use('/blogs/', blogPostRoutes);
+app.use('/comments/', commentsRoutes);
+app.use('/login/', userRoutes);
+app.use(errorHandler);
+
+export default app;
