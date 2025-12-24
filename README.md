@@ -15,14 +15,14 @@ Underneath that you can showcase your previous work experience and add anything 
 
 Last there is the contact form. Anyone can contact you through this. Make sure to read the setup section to set this up. If you don't want or need this, you can simply remove it.
 
-[![Demo Video](assets/landing_page.png)](videos/landing_page.mp4)
+![Demo](assets/landing_page.gif)
 
 The blog section starts with a hero that you can use to tell about your reasons for creating the blog, what readers can expect or how often you will publish an article. After that your articles are listed that you can click on and read about certain articles. Once clicked you will land on the blog articles that is followed by a comment-section where users can write comments.
 
-[![Demo Video](assets/blog.png)](videos/blog.mp4)
+![Demo](assets/blog.gif)
 
 If you want to publish/modify an existing post you would need to login under localhost:PORT/login. Since the login was only meant for my brother, the email and password must match what is specified in backend/.env. After that you can simply create or modify a post, which is very simplistic and straight forward.
 
-[![Demo Video](assets/admin_pages.png)](videos/admin_pages.mp4)
+![Demo](assets/admin_pages.gif)
 
 # Setup
