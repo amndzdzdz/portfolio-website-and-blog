@@ -1,4 +1,4 @@
-# Portfolio Website Template + Blog
+# Portfolio Website Template + Blog (Not working yet)
 
 ![CI](https://github.com/amndzdzdz/portfolio-website-and-blog/actions/workflows/frontend-ci.yml/badge.svg)
 ![CI](https://github.com/amndzdzdz/portfolio-website-and-blog/actions/workflows/backend-ci.yml/badge.svg)
@@ -6,8 +6,6 @@
 ![npm](https://img.shields.io/npm/v/my-package.svg)
 
 I've started this project because my brother was in need of a website that displays his resume, but in a more open and chilled down way compared to linkedin. Additionally, he wanted an integrated blog in order to have a motivation to write and publish financial articles. I've felt like open-sourcing the code so that anyone who would like to a have a portfolio website with a blog could have one. Btw, all text is written myself but I've run chatgpt to refine some of my spelling.
-
-## Portfolio-like landing page
 
 The landing page greets you with a nice hero section and below starts directly with a short non-formal introduction of yourself, what you do, your hobbies and anything else you'd like to tell about yourself.
 
@@ -25,4 +23,75 @@ If you want to publish/modify an existing post you would need to login under loc
 
 ![Demo](assets/admin_pages.gif)
 
-# Setup
+## Features (Summary)
+
+- Portfolio-style landing page (hero, experience, education, contact)
+- Integrated blog with comments
+- Admin dashboard for creating and editing posts
+- Authentication-protected login area
+- Responsive design (mobile & desktop)
+
+## Tech Stack
+
+**Frontend**
+
+- React
+- Tailwind CSS
+
+**Backend**
+
+- Node.js / Express
+- MongoDB
+- JWT-based authentication
+
+**DevOps**
+
+- GitHub Actions (CI)
+- Docker (optional, if applicable)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js -v 24.11
+- npm
+- Database (if running without docker)
+
+### Installation
+
+```bash
+git clone https://github.com/amndzdzdz/portfolio-website-and-blog.git
+cd portfolio-website-and-blog
+```
+
+### Setup
+
+First you will need to fill out the .envs within the backend and frontend folder. Web3Forms is used to send emails and if you want to use still functionality, you will need to create an account (free tier) and input your web3forms key in the frontend .env.
+
+Afterwards do the following:
+
+```bash
+cd frontend
+npm install
+npm run dev
+
+cd backend
+npm install
+npm run dev
+```
+
+Or if you want to run in docker:
+
+```bash
+cd portfolio-website-and-blog
+docker compose up
+```
+
+## Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Open a pull request
