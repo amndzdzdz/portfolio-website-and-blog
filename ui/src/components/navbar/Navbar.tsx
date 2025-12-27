@@ -24,9 +24,8 @@ export default function Navbar() {
         <div className="hidden md:flex pl-4">
           <NavbarElement
             {...{
-              text: 'Joseph Dziri',
+              text: 'John Doe',
               to: '/#hero-section',
-              section: 'hero-section',
             }}
           ></NavbarElement>
         </div>
@@ -35,18 +34,16 @@ export default function Navbar() {
             {...{
               text: 'About',
               to: '/#about-section',
-              section: 'about-section',
             }}
           ></NavbarElement>
           <NavbarElement
             {...{
               text: 'Contact',
               to: '/#contact-section',
-              section: 'contact-section',
             }}
           ></NavbarElement>
           <NavbarElement
-            {...{ text: 'Blog', to: '/blog', section: 'blog' }}
+            {...{ text: 'Blog', to: '/blog#blog-hero' }}
           ></NavbarElement>
         </div>
       </div>
