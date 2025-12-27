@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import josephImg from '../../assets/joseph.webp';
+import profile from '../../assets/john_doe.webp';
 
 export default function LandingPageHero() {
   const handleClick = () => {
@@ -23,11 +23,11 @@ export default function LandingPageHero() {
       >
         <div className="w-full sm:w-1/2 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Hey, I'm Joseph Dziri
+            Hey, I'm John Doe
           </h1>
           <p className="text-lg text-blue-100 mb-8">
-            I have a passion for economics. Get to know me and my previous
-            experience. Check out my blog too!
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut
           </p>
           <div className="flex justify-center md:justify-start gap-4">
             <Link
@@ -55,7 +55,7 @@ export default function LandingPageHero() {
 
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src={josephImg}
+            src={profile}
             alt="App screenshot"
             className="w-50 md:w-120 rounded-full shadow-lg"
           />
