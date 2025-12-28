@@ -7,30 +7,33 @@ import EducationSectionItem from './EducationSectionItem';
 const education: InformationItemProps[] = [
   {
     image: mannheim,
-    uniName: 'University of Mannheim',
-    text: 'I earned my foundational education at the University of Mannheim, \
-    where I gained a strong grounding in economics and quantitative methods. \
-     The university’s rigorous academic environment and diverse student \
-     community helped me develop analytical thinking and problem-solving \
-     skills that are essential in today’s business world.',
+    uniName: 'University of Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
+    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam \
+    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et \
+    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem \
+    ipsum dolor sit amet  consetetur sadipscing elitr, sed diam nonumy eirmod \
+    tempor invidunt ut.',
   },
   {
     image: edhec,
-    uniName: 'EDHEC Business School',
-    text: 'I further enhanced my international perspective at EDHEC \
-    Business School, known for its expertise in finance and global business. \
-    Studying there allowed me to engage with a multicultural student body, \
-    deepen my knowledge of international markets, and develop a strategic \
-    mindset for tackling complex business challenges.',
+    uniName: 'Lorem Ipsum Business School',
+    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
+    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam \
+    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et \
+    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem \
+    ipsum dolor sit amet  consetetur sadipscing elitr, sed diam nonumy eirmod \
+    tempor invidunt ut.',
   },
   {
     image: thi,
-    uniName: 'Technical University of Ingolstadt',
-    text: 'I completed my bachelor’s degree in Economics at the Technical \
-    University of Ingolstadt, located in the heart of Bavaria. The university \
-    is known for its strong focus on innovation, technology, and practical \
-    learning, providing students with a dynamic environment that connects \
-    theory with real-world application.',
+    uniName: 'Technical University of Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
+    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam \
+    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et \
+    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem \
+    ipsum dolor sit amet  consetetur sadipscing elitr, sed diam nonumy eirmod \
+    tempor invidunt ut.',
   },
 ];
 

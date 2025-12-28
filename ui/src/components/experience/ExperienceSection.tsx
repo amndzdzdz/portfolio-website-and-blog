@@ -6,30 +6,30 @@ import ExperienceItem from './ExperienceItem';
 const education: InformationItemProps[] = [
   {
     image: roedlAndPartner,
-    uniName: 'Internship - Audit',
-    text: 'I earned my foundational education at the University of Mannheim, \
-    where I gained a strong grounding in economics and quantitative methods. \
-     The university’s rigorous academic environment and diverse student \
-     community helped me develop analytical thinking and problem-solving \
-     skills that are essential in today’s business world.',
+    uniName: 'Internship - Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
+    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam \
+    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et \
+    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem \
+    ipsum dolor sit amet.',
   },
   {
     image: vrBank,
-    uniName: 'Working Student - Data Analyst',
-    text: 'I further enhanced my international perspective at EDHEC \
-    Business School, known for its expertise in finance and global business. \
-    Studying there allowed me to engage with a multicultural student body, \
-    deepen my knowledge of international markets, and develop a strategic \
-    mindset for tackling complex business challenges.',
+    uniName: 'Working Student - Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
+    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam \
+    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et \
+    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem \
+    ipsum dolor sit amet.',
   },
   {
     image: vrBank,
-    uniName: 'Internship - Client Advisory',
-    text: 'I completed my bachelor’s degree in Economics at the Technical \
-    University of Ingolstadt, located in the heart of Bavaria. The university \
-    is known for its strong focus on innovation, technology, and practical \
-    learning, providing students with a dynamic environment that connects \
-    theory with real-world application.',
+    uniName: 'Internship - Lorem Ipsum',
+    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \
+    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam \
+    erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et \
+    ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem \
+    ipsum dolor sit amet.',
   },
 ];
 
