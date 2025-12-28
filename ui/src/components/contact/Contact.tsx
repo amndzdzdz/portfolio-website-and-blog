@@ -1,5 +1,5 @@
 import ContactForm from './ContactForm';
-import profile from '../../assets/joseph.webp';
+import profile from '../../assets/john_doe.webp';
 
 const formProps = {
   title: 'Send me an email!',
