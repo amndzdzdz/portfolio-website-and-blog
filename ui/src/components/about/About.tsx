@@ -1,4 +1,4 @@
-import profile from '../../assets/joseph.webp';
+import profile from '../../assets/john_doe.webp';
 
 export default function About() {
   return (
