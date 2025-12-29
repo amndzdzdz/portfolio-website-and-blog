@@ -26,6 +26,14 @@ export default function ModifyPost() {
   const [currentPostId, setCurrentPostId] = useState<string | undefined>(
     undefined,
   );
+  const isFormIncomplete =
+    !currentPostId ||
+    !title ||
+    !caption ||
+    !timeToRead ||
+    !image ||
+    !category ||
+    !content;
 
   useEffect(() => {
     async function loadBlogPosts() {
@@ -141,6 +149,7 @@ export default function ModifyPost() {
             <div className="flex flex-col m-5">
               <label>Title</label>
               <input
+                data-testid="title"
                 required
                 className="
               bg-neutral-secondary-medium border border-default-medium 
@@ -160,6 +169,7 @@ export default function ModifyPost() {
               <label>Time to read</label>
               <input
                 required
+                data-testid="timeToRead"
                 className="
               bg-neutral-secondary-medium border border-default-medium 
               text-heading text-sm rounded-base focus:ring-brand 
@@ -178,6 +188,7 @@ export default function ModifyPost() {
             <div className="flex flex-col m-5">
               <label>Image</label>
               <input
+                data-testid="image"
                 required
                 className="
               bg-neutral-secondary-medium border border-default-medium 
@@ -198,6 +209,7 @@ export default function ModifyPost() {
               <label>Caption</label>
               <input
                 required
+                data-testid="caption"
                 className="
               bg-neutral-secondary-medium border border-default-medium 
               text-heading text-sm rounded-base focus:ring-brand 
@@ -216,6 +228,7 @@ export default function ModifyPost() {
               <label>Category</label>
               <input
                 required
+                data-testid="category"
                 className="
               bg-neutral-secondary-medium border border-default-medium 
               text-heading text-sm rounded-base focus:ring-brand 
@@ -233,6 +246,7 @@ export default function ModifyPost() {
             <div className="flex flex-col m-5">
               <label>Content</label>
               <SunEditor
+                data-testid="content"
                 setOptions={{
                   buttonList: buttonList.complex,
                 }}
@@ -244,7 +258,7 @@ export default function ModifyPost() {
             </div>
             <div className="flex flex-row m-5">
               <button
-                disabled={currentPostId ? false : true}
+                disabled={isFormIncomplete}
                 name="delete-button"
                 className="
             bg-red-500 text-white font-semibold px-6 py-3 mr-5
@@ -259,7 +273,7 @@ export default function ModifyPost() {
                 Delete blog post
               </button>
               <button
-                disabled={currentPostId ? false : true}
+                disabled={isFormIncomplete}
                 name="update-button"
                 className="
             bg-blue-500 text-white font-semibold px-6 py-3 
