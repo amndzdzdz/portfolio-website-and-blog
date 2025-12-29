@@ -46,6 +46,7 @@ export default function BlogPreview({
           <p className="text-gray-600 line-clamp-2 mb-5">{caption}</p>
           <Link
             to={`/blogs/${_id}`}
+            onClick={() => window.scrollTo(0, 0)}
             id={_id}
             className="
                 border border-blue-600 text-blue-600 font-semibold 
