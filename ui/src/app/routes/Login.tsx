@@ -70,7 +70,7 @@ export default function Login() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-              placeholder="Email"
+              placeholder="Password"
               className="
               shadow appearance-none border rounded w-full 
               py-2 px-3 text-gray-700 leading-tight focus:outline-none 
