@@ -14,6 +14,8 @@ export default function CreatePost() {
   const [caption, setCaption] = useState('');
   const [category, setCategory] = useState('');
   const [content, setContent] = useState('');
+  const isContentSet =
+    !title || !timeToRead || !image || !caption || !category || !content;
 
   useEffect(() => {
     async function checkAuth() {
@@ -68,6 +70,7 @@ export default function CreatePost() {
             <div className="flex flex-col m-5">
               <label>Title</label>
               <input
+                data-testid="title"
                 required
                 className="
               bg-neutral-secondary-medium border border-default-medium 
@@ -85,6 +88,7 @@ export default function CreatePost() {
             <div className="flex flex-col m-5">
               <label>Time to read</label>
               <input
+                data-testid="timeToRead"
                 required
                 className="
               bg-neutral-secondary-medium border border-default-medium 
@@ -103,6 +107,7 @@ export default function CreatePost() {
             <div className="flex flex-col m-5">
               <label>Image</label>
               <input
+                data-testid="image"
                 required
                 className="
               bg-neutral-secondary-medium border border-default-medium 
@@ -120,6 +125,7 @@ export default function CreatePost() {
             <div className="flex flex-col m-5">
               <label>Caption</label>
               <input
+                data-testid="caption"
                 required
                 className="
               bg-neutral-secondary-medium border border-default-medium 
@@ -138,6 +144,7 @@ export default function CreatePost() {
               <label>Category</label>
               <input
                 required
+                data-testid="category"
                 className="
               bg-neutral-secondary-medium border border-default-medium 
               text-heading text-sm rounded-base focus:ring-brand 
@@ -164,9 +171,11 @@ export default function CreatePost() {
             </div>
             <div className="flex flex-row m-5">
               <button
+                disabled={isContentSet}
                 className="
             bg-blue-500 text-white font-semibold px-6 py-3 
             rounded-lg shadow-md hover:bg-blue-600 transition hover:cursor-pointer
+            disabled:bg-gray-500 disabled:cursor-not-allowed
                       "
                 type="submit"
               >
