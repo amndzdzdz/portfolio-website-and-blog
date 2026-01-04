@@ -23,9 +23,7 @@ describe('Landing-page', () => {
         <LandingPage></LandingPage>
       </MemoryRouter>,
     );
-    expect(
-      screen.getByRole('link', { name: 'Joseph Dziri' }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'John Doe' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Contact' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Blog' })).toBeInTheDocument();
@@ -39,7 +37,7 @@ describe('Landing-page', () => {
       </MemoryRouter>,
     );
     const heroLink = screen
-      .getAllByRole('link', { name: 'Joseph Dziri' })
+      .getAllByRole('link', { name: 'John Doe' })
       .find((link) => link.getAttribute('href') === '/#hero-section');
 
     expect(heroLink).toBeDefined();
@@ -95,9 +93,9 @@ describe('Landing-page', () => {
     );
     const heroLink = screen
       .getAllByRole('link', { name: 'Blog' })
-      .find((link) => link.getAttribute('href') === '/blog');
+      .find((link) => link.getAttribute('href') === '/blog#blog-hero');
     expect(heroLink).toBeDefined();
-    expect(heroLink).toHaveAttribute('href', '/blog');
+    expect(heroLink).toHaveAttribute('href', '/blog#blog-hero');
     await userEvent.click(heroLink!);
   });
 
