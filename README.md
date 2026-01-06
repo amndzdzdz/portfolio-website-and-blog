@@ -49,7 +49,7 @@ If you want to publish/modify an existing post you would need to login under loc
 - GitHub Actions (CI)
 - Docker (optional, if applicable)
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -66,21 +66,19 @@ cd portfolio-website-and-blog
 
 ### Setup
 
-First you will need to fill out the .envs within the backend and frontend folder. Web3Forms is used to send emails and if you want to use still functionality, you will need to create an account (free tier) and input your web3forms key in the frontend .env.
+First you will need to fill out the .envs within the backend and frontend folder. Web3Forms is used to send emails and if you still want to use this functionality, you will need to create an account (free tier) and input your web3forms key in the frontend .env.
 
 Afterwards do the following:
 
 ```bash
-cd frontend
+cd ui
 npm install
-npm run dev
 
 cd backend
 npm install
-npm run dev
 ```
 
-Or if you want to run in docker:
+Run in docker:
 
 ```bash
 cd portfolio-website-and-blog
